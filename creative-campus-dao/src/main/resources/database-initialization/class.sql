@@ -8,7 +8,7 @@ CREATE TABLE `classes`
     `creator_id`         BIGINT                                         NOT NULL COMMENT 'ID of the creator.',
     `creation_time`      DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Creation time of the class.',
     `update_operator_id` BIGINT                                         NOT NULL COMMENT 'ID of the account of last update.',
-    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Time of last update.',
+    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
     PRIMARY KEY (`id`),
     KEY `idx_major_id` (`major_id`)
 )

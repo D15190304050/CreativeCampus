@@ -5,7 +5,7 @@ CREATE TABLE `table_name`
     `creator_id`         BIGINT                                         NOT NULL COMMENT 'ID of the creator.',
     `creation_time`      DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Creation time of the discipline.',
     `update_operator_id` BIGINT                                         NOT NULL COMMENT 'ID of the account of last update.',
-    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Time of last update.',
+    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
     PRIMARY KEY (`id`)
 )
     ENGINE = INNODB

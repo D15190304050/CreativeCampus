@@ -8,7 +8,7 @@ CREATE TABLE `disciplines`
     `creator_id`           BIGINT                                         NOT NULL COMMENT 'ID of the creator.',
     `creation_time`        DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Creation time of the discipline.',
     `update_operator_id`   BIGINT                                         NOT NULL COMMENT 'ID of the account of last update.',
-    `update_time`          DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Time of last update.',
+    `update_time`          DATETIME                                       NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
     PRIMARY KEY (`id`),
     KEY `idx_parent_discipline_id` (`parent_discipline_id`),
     KEY `idx_level` (`level`)

@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>perspective-of-teacher</artifactId>
+    <artifactId>perspective-of-teachers</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>perspective-of-teacher</name>

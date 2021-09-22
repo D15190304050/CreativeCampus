@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="creative-campus-commons" />
         <module name="creative-campus-dao" />
-        <module name="perspective-of-teacher" />
         <module name="perspective-of-students" />
+        <module name="perspective-of-teachers" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,7 +23,7 @@
       <module name="creative-campus-commons" options="-parameters" />
       <module name="creative-campus-dao" options="-parameters" />
       <module name="perspective-of-students" options="-parameters" />
-      <module name="perspective-of-teacher" options="-parameters" />
+      <module name="perspective-of-teachers" options="-parameters" />
       <module name="teacher's-perspective" options="-parameters" />
     </option>
   </component>

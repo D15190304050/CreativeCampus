@@ -8,9 +8,10 @@ CREATE TABLE `homework`
     `creator_id`         BIGINT                                         NOT NULL COMMENT 'ID of the creator.',
     `creation_time`      DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Creation time of the discipline.',
     `update_operator_id` BIGINT                                         NOT NULL COMMENT 'ID of the account of last update.',
-    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Time of last update.',
+    `update_time`        DATETIME                                       NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
     PRIMARY KEY (`id`),
-    KEY `idx_discipline_id` (`discipline_id`)
+    KEY `idx_discipline_id` (`discipline_id`),
+    KEY `idx_creator_id` (`creator_id`)
 )
     ENGINE = INNODB
     DEFAULT CHARSET = utf8_mb4

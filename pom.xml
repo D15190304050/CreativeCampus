@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>perspective-of-teacher</module>
+        <module>perspective-of-teachers</module>
         <module>creative-campus-commons</module>
         <module>perspective-of-students</module>
         <module>creative-campus-dao</module>

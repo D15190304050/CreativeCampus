@@ -9,7 +9,7 @@ CREATE TABLE `students`
     `creator_id`         BIGINT       NOT NULL COMMENT 'ID of the creator who adds this record.',
     `creation_time`      DATETIME     NOT NULL DEFAULT NOW() COMMENT 'Creation time of this record.',
     `update_operator_id` BIGINT       NOT NULL COMMENT 'ID of the account of last update.',
-    `update_time`        DATETIME     NOT NULL DEFAULT NOW() COMMENT 'Time of last update.',
+    `update_time`        DATETIME     NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
     PRIMARY KEY (`id`),
     KEY `idx_class_id` (`class_id`),
     UNIQUE KEY `idx_unique_class_id_student_number` (`class_id`, `student_number`)
