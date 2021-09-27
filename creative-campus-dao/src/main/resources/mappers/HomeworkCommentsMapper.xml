@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.HomeworkCommentsMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.HomeworkComments">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="homework_id" jdbcType="BIGINT" property="homeworkId" />
+    <result column="pre_homework_comment_id" jdbcType="BIGINT" property="preHomeworkCommentId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from homework_comments
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.HomeworkComments">
+    insert into homework_comments (id, homework_id, pre_homework_comment_id, 
+      account_id, publish_time, is_deleted
+      )
+    values (#{id,jdbcType=BIGINT}, #{homeworkId,jdbcType=BIGINT}, #{preHomeworkCommentId,jdbcType=BIGINT}, 
+      #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.HomeworkComments">
+    update homework_comments
+    set homework_id = #{homeworkId,jdbcType=BIGINT},
+      pre_homework_comment_id = #{preHomeworkCommentId,jdbcType=BIGINT},
+      account_id = #{accountId,jdbcType=BIGINT},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, homework_id, pre_homework_comment_id, account_id, publish_time, is_deleted
+    from homework_comments
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, homework_id, pre_homework_comment_id, account_id, publish_time, is_deleted
+    from homework_comments
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.HomeworkComments">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="homework_id" jdbcType="BIGINT" property="homeworkId" />
+    <result column="pre_homework_comment_id" jdbcType="BIGINT" property="preHomeworkCommentId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from homework_comments
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.HomeworkComments">
+    insert into homework_comments (id, homework_id, pre_homework_comment_id, 
+      account_id, publish_time, is_deleted
+      )
+    values (#{id,jdbcType=BIGINT}, #{homeworkId,jdbcType=BIGINT}, #{preHomeworkCommentId,jdbcType=BIGINT}, 
+      #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=TINYINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.HomeworkComments">
+    update homework_comments
+    set homework_id = #{homeworkId,jdbcType=BIGINT},
+      pre_homework_comment_id = #{preHomeworkCommentId,jdbcType=BIGINT},
+      account_id = #{accountId,jdbcType=BIGINT},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, homework_id, pre_homework_comment_id, account_id, publish_time, is_deleted
+    from homework_comments
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, homework_id, pre_homework_comment_id, account_id, publish_time, is_deleted
+    from homework_comments
+  </select>
+</mapper>

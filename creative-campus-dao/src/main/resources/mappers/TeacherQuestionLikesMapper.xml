@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.TeacherQuestionLikesMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="question_id" jdbcType="BIGINT" property="questionId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="likes" jdbcType="TINYINT" property="likes" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from teacher_question_likes
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    insert into teacher_question_likes (id, teacher_id, question_id, 
+      creation_time, likes)
+    values (#{id,jdbcType=BIGINT}, #{teacherId,jdbcType=BIGINT}, #{questionId,jdbcType=BIGINT}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{likes,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    update teacher_question_likes
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      question_id = #{questionId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      likes = #{likes,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, teacher_id, question_id, creation_time, likes
+    from teacher_question_likes
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, teacher_id, question_id, creation_time, likes
+    from teacher_question_likes
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="question_id" jdbcType="BIGINT" property="questionId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="likes" jdbcType="TINYINT" property="likes" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from teacher_question_likes
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    insert into teacher_question_likes (id, teacher_id, question_id, 
+      creation_time, likes)
+    values (#{id,jdbcType=BIGINT}, #{teacherId,jdbcType=BIGINT}, #{questionId,jdbcType=BIGINT}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{likes,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherQuestionLikes">
+    update teacher_question_likes
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      question_id = #{questionId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      likes = #{likes,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, teacher_id, question_id, creation_time, likes
+    from teacher_question_likes
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, teacher_id, question_id, creation_time, likes
+    from teacher_question_likes
+  </select>
+</mapper>

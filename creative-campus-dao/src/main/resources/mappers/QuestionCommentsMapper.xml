@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.QuestionCommentsMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComments">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="question_id" jdbcType="BIGINT" property="questionId" />
+    <result column="pre_question_comment_id" jdbcType="BIGINT" property="preQuestionCommentId" />
+    <result column="question_comment_content_id" jdbcType="BIGINT" property="questionCommentContentId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from question_comments
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComments">
+    insert into question_comments (id, question_id, pre_question_comment_id, 
+      question_comment_content_id, account_id, publish_time, 
+      is_deleted)
+    values (#{id,jdbcType=BIGINT}, #{questionId,jdbcType=BIGINT}, #{preQuestionCommentId,jdbcType=BIGINT}, 
+      #{questionCommentContentId,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, 
+      #{isDeleted,jdbcType=BIT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComments">
+    update question_comments
+    set question_id = #{questionId,jdbcType=BIGINT},
+      pre_question_comment_id = #{preQuestionCommentId,jdbcType=BIGINT},
+      question_comment_content_id = #{questionCommentContentId,jdbcType=BIGINT},
+      account_id = #{accountId,jdbcType=BIGINT},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, question_id, pre_question_comment_id, question_comment_content_id, account_id, 
+    publish_time, is_deleted
+    from question_comments
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, question_id, pre_question_comment_id, question_comment_content_id, account_id, 
+    publish_time, is_deleted
+    from question_comments
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComments">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="question_id" jdbcType="BIGINT" property="questionId" />
+    <result column="pre_question_comment_id" jdbcType="BIGINT" property="preQuestionCommentId" />
+    <result column="question_comment_content_id" jdbcType="BIGINT" property="questionCommentContentId" />
+    <result column="account_id" jdbcType="BIGINT" property="accountId" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+    <result column="is_deleted" jdbcType="BIT" property="isDeleted" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from question_comments
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComments">
+    insert into question_comments (id, question_id, pre_question_comment_id, 
+      question_comment_content_id, account_id, publish_time, 
+      is_deleted)
+    values (#{id,jdbcType=BIGINT}, #{questionId,jdbcType=BIGINT}, #{preQuestionCommentId,jdbcType=BIGINT}, 
+      #{questionCommentContentId,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, 
+      #{isDeleted,jdbcType=BIT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComments">
+    update question_comments
+    set question_id = #{questionId,jdbcType=BIGINT},
+      pre_question_comment_id = #{preQuestionCommentId,jdbcType=BIGINT},
+      question_comment_content_id = #{questionCommentContentId,jdbcType=BIGINT},
+      account_id = #{accountId,jdbcType=BIGINT},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      is_deleted = #{isDeleted,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, question_id, pre_question_comment_id, question_comment_content_id, account_id, 
+    publish_time, is_deleted
+    from question_comments
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, question_id, pre_question_comment_id, question_comment_content_id, account_id, 
+    publish_time, is_deleted
+    from question_comments
+  </select>
+</mapper>

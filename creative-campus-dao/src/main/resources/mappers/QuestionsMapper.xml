@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.QuestionsMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Questions">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="source_type_id" jdbcType="INTEGER" property="sourceTypeId" />
+    <result column="question_type_id" jdbcType="BIGINT" property="questionTypeId" />
+    <result column="difficulty_type_id" jdbcType="BIGINT" property="difficultyTypeId" />
+    <result column="question_body_url" jdbcType="VARCHAR" property="questionBodyUrl" />
+    <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
+    <result column="answer_body_url" jdbcType="VARCHAR" property="answerBodyUrl" />
+    <result column="estimated_time_to_finish" jdbcType="INTEGER" property="estimatedTimeToFinish" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_operator_id" jdbcType="BIGINT" property="updateOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from questions
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Questions">
+    insert into questions (id, source_type_id, question_type_id, 
+      difficulty_type_id, question_body_url, discipline_id, 
+      answer_body_url, estimated_time_to_finish, tag, 
+      creator_id, creation_time, update_operator_id, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{sourceTypeId,jdbcType=INTEGER}, #{questionTypeId,jdbcType=BIGINT}, 
+      #{difficultyTypeId,jdbcType=BIGINT}, #{questionBodyUrl,jdbcType=VARCHAR}, #{disciplineId,jdbcType=BIGINT}, 
+      #{answerBodyUrl,jdbcType=VARCHAR}, #{estimatedTimeToFinish,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Questions">
+    update questions
+    set source_type_id = #{sourceTypeId,jdbcType=INTEGER},
+      question_type_id = #{questionTypeId,jdbcType=BIGINT},
+      difficulty_type_id = #{difficultyTypeId,jdbcType=BIGINT},
+      question_body_url = #{questionBodyUrl,jdbcType=VARCHAR},
+      discipline_id = #{disciplineId,jdbcType=BIGINT},
+      answer_body_url = #{answerBodyUrl,jdbcType=VARCHAR},
+      estimated_time_to_finish = #{estimatedTimeToFinish,jdbcType=INTEGER},
+      tag = #{tag,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_operator_id = #{updateOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, source_type_id, question_type_id, difficulty_type_id, question_body_url, 
+    discipline_id, answer_body_url, estimated_time_to_finish, tag, creator_id, creation_time, 
+    update_operator_id, update_time
+    from questions
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, source_type_id, question_type_id, difficulty_type_id, question_body_url, 
+    discipline_id, answer_body_url, estimated_time_to_finish, tag, creator_id, creation_time, 
+    update_operator_id, update_time
+    from questions
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Questions">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="source_type_id" jdbcType="INTEGER" property="sourceTypeId" />
+    <result column="question_type_id" jdbcType="BIGINT" property="questionTypeId" />
+    <result column="difficulty_type_id" jdbcType="BIGINT" property="difficultyTypeId" />
+    <result column="question_body_url" jdbcType="VARCHAR" property="questionBodyUrl" />
+    <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
+    <result column="answer_body_url" jdbcType="VARCHAR" property="answerBodyUrl" />
+    <result column="estimated_time_to_finish" jdbcType="INTEGER" property="estimatedTimeToFinish" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_operator_id" jdbcType="BIGINT" property="updateOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from questions
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Questions">
+    insert into questions (id, source_type_id, question_type_id, 
+      difficulty_type_id, question_body_url, discipline_id, 
+      answer_body_url, estimated_time_to_finish, tag, 
+      creator_id, creation_time, update_operator_id, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{sourceTypeId,jdbcType=INTEGER}, #{questionTypeId,jdbcType=BIGINT}, 
+      #{difficultyTypeId,jdbcType=BIGINT}, #{questionBodyUrl,jdbcType=VARCHAR}, #{disciplineId,jdbcType=BIGINT}, 
+      #{answerBodyUrl,jdbcType=VARCHAR}, #{estimatedTimeToFinish,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Questions">
+    update questions
+    set source_type_id = #{sourceTypeId,jdbcType=INTEGER},
+      question_type_id = #{questionTypeId,jdbcType=BIGINT},
+      difficulty_type_id = #{difficultyTypeId,jdbcType=BIGINT},
+      question_body_url = #{questionBodyUrl,jdbcType=VARCHAR},
+      discipline_id = #{disciplineId,jdbcType=BIGINT},
+      answer_body_url = #{answerBodyUrl,jdbcType=VARCHAR},
+      estimated_time_to_finish = #{estimatedTimeToFinish,jdbcType=INTEGER},
+      tag = #{tag,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_operator_id = #{updateOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, source_type_id, question_type_id, difficulty_type_id, question_body_url, 
+    discipline_id, answer_body_url, estimated_time_to_finish, tag, creator_id, creation_time, 
+    update_operator_id, update_time
+    from questions
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, source_type_id, question_type_id, difficulty_type_id, question_body_url, 
+    discipline_id, answer_body_url, estimated_time_to_finish, tag, creator_id, creation_time, 
+    update_operator_id, update_time
+    from questions
+  </select>
+</mapper>

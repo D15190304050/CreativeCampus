@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.AdministratorsMapper">
+    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrators">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="account_id" jdbcType="BIGINT" property="accountId"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from administrators
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrators">
+        insert into administrators (id, account_id)
+        values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrators">
+        update administrators
+        set account_id = #{accountId,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id, account_id
+        from administrators
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, account_id
+        from administrators
+    </select>
+    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrators">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="account_id" jdbcType="BIGINT" property="accountId"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from administrators
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrators">
+        insert into administrators (id, account_id)
+        values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrators">
+        update administrators
+        set account_id = #{accountId,jdbcType=BIGINT}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select id, account_id
+        from administrators
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, account_id
+        from administrators
+    </select>
+</mapper>

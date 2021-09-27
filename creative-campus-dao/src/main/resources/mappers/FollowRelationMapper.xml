@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.FollowRelationMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FollowRelation">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="source_account_id" jdbcType="BIGINT" property="sourceAccountId" />
+    <result column="destination_account_id" jdbcType="BIGINT" property="destinationAccountId" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from follow_relation
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.FollowRelation">
+    insert into follow_relation (id, source_account_id, destination_account_id, 
+      start_time)
+    values (#{id,jdbcType=BIGINT}, #{sourceAccountId,jdbcType=BIGINT}, #{destinationAccountId,jdbcType=BIGINT}, 
+      #{startTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FollowRelation">
+    update follow_relation
+    set source_account_id = #{sourceAccountId,jdbcType=BIGINT},
+      destination_account_id = #{destinationAccountId,jdbcType=BIGINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, source_account_id, destination_account_id, start_time
+    from follow_relation
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, source_account_id, destination_account_id, start_time
+    from follow_relation
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FollowRelation">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="source_account_id" jdbcType="BIGINT" property="sourceAccountId" />
+    <result column="destination_account_id" jdbcType="BIGINT" property="destinationAccountId" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from follow_relation
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.FollowRelation">
+    insert into follow_relation (id, source_account_id, destination_account_id, 
+      start_time)
+    values (#{id,jdbcType=BIGINT}, #{sourceAccountId,jdbcType=BIGINT}, #{destinationAccountId,jdbcType=BIGINT}, 
+      #{startTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FollowRelation">
+    update follow_relation
+    set source_account_id = #{sourceAccountId,jdbcType=BIGINT},
+      destination_account_id = #{destinationAccountId,jdbcType=BIGINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, source_account_id, destination_account_id, start_time
+    from follow_relation
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, source_account_id, destination_account_id, start_time
+    from follow_relation
+  </select>
+</mapper>

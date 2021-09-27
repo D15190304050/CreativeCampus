@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.GradesMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Grades">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="approximate_start_month" jdbcType="INTEGER" property="approximateStartMonth" />
+    <result column="approximate_start_day" jdbcType="INTEGER" property="approximateStartDay" />
+    <result column="approximate_end_month" jdbcType="INTEGER" property="approximateEndMonth" />
+    <result column="approximate_end_day" jdbcType="INTEGER" property="approximateEndDay" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from grades
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Grades">
+    insert into grades (id, name, approximate_start_month, 
+      approximate_start_day, approximate_end_month, 
+      approximate_end_day)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{approximateStartMonth,jdbcType=INTEGER}, 
+      #{approximateStartDay,jdbcType=INTEGER}, #{approximateEndMonth,jdbcType=INTEGER}, 
+      #{approximateEndDay,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Grades">
+    update grades
+    set name = #{name,jdbcType=VARCHAR},
+      approximate_start_month = #{approximateStartMonth,jdbcType=INTEGER},
+      approximate_start_day = #{approximateStartDay,jdbcType=INTEGER},
+      approximate_end_month = #{approximateEndMonth,jdbcType=INTEGER},
+      approximate_end_day = #{approximateEndDay,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, name, approximate_start_month, approximate_start_day, approximate_end_month, 
+    approximate_end_day
+    from grades
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, approximate_start_month, approximate_start_day, approximate_end_month, 
+    approximate_end_day
+    from grades
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Grades">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="approximate_start_month" jdbcType="INTEGER" property="approximateStartMonth" />
+    <result column="approximate_start_day" jdbcType="INTEGER" property="approximateStartDay" />
+    <result column="approximate_end_month" jdbcType="INTEGER" property="approximateEndMonth" />
+    <result column="approximate_end_day" jdbcType="INTEGER" property="approximateEndDay" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from grades
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Grades">
+    insert into grades (id, name, approximate_start_month, 
+      approximate_start_day, approximate_end_month, 
+      approximate_end_day)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{approximateStartMonth,jdbcType=INTEGER}, 
+      #{approximateStartDay,jdbcType=INTEGER}, #{approximateEndMonth,jdbcType=INTEGER}, 
+      #{approximateEndDay,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Grades">
+    update grades
+    set name = #{name,jdbcType=VARCHAR},
+      approximate_start_month = #{approximateStartMonth,jdbcType=INTEGER},
+      approximate_start_day = #{approximateStartDay,jdbcType=INTEGER},
+      approximate_end_month = #{approximateEndMonth,jdbcType=INTEGER},
+      approximate_end_day = #{approximateEndDay,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, name, approximate_start_month, approximate_start_day, approximate_end_month, 
+    approximate_end_day
+    from grades
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, approximate_start_month, approximate_start_day, approximate_end_month, 
+    approximate_end_day
+    from grades
+  </select>
+</mapper>

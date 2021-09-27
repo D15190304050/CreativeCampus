@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.creativecampus.mappers.HomeworkMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Homework">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
+    <result column="homework_body_url" jdbcType="VARCHAR" property="homeworkBodyUrl" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_operator_id" jdbcType="BIGINT" property="updateOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from homework
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Homework">
+    insert into homework (id, name, description, 
+      discipline_id, homework_body_url, creator_id, 
+      creation_time, update_operator_id, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{disciplineId,jdbcType=BIGINT}, #{homeworkBodyUrl,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Homework">
+    update homework
+    set name = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      discipline_id = #{disciplineId,jdbcType=BIGINT},
+      homework_body_url = #{homeworkBodyUrl,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_operator_id = #{updateOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, name, description, discipline_id, homework_body_url, creator_id, creation_time, 
+    update_operator_id, update_time
+    from homework
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, description, discipline_id, homework_body_url, creator_id, creation_time, 
+    update_operator_id, update_time
+    from homework
+  </select>
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Homework">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
+    <result column="homework_body_url" jdbcType="VARCHAR" property="homeworkBodyUrl" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_operator_id" jdbcType="BIGINT" property="updateOperatorId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from homework
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Homework">
+    insert into homework (id, name, description, 
+      discipline_id, homework_body_url, creator_id, 
+      creation_time, update_operator_id, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{disciplineId,jdbcType=BIGINT}, #{homeworkBodyUrl,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Homework">
+    update homework
+    set name = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      discipline_id = #{disciplineId,jdbcType=BIGINT},
+      homework_body_url = #{homeworkBodyUrl,jdbcType=VARCHAR},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_operator_id = #{updateOperatorId,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, name, description, discipline_id, homework_body_url, creator_id, creation_time, 
+    update_operator_id, update_time
+    from homework
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, description, discipline_id, homework_body_url, creator_id, creation_time, 
+    update_operator_id, update_time
+    from homework
+  </select>
+</mapper>
