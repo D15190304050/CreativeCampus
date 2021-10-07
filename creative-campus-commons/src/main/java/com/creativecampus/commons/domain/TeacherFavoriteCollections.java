@@ -2,7 +2,8 @@ package com.creativecampus.commons.domain;
 
 import java.util.Date;
 
-public class TeacherFavoriteCollections {
+public class TeacherFavoriteCollections
+{
     private Long id;
 
     private Long teacherId;
@@ -15,51 +16,63 @@ public class TeacherFavoriteCollections {
 
     private Date updateTime;
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public Long getTeacherId() {
+    public Long getTeacherId()
+    {
         return teacherId;
     }
 
-    public void setTeacherId(Long teacherId) {
+    public void setTeacherId(Long teacherId)
+    {
         this.teacherId = teacherId;
     }
 
-    public Long getFavoriteTypeId() {
+    public Long getFavoriteTypeId()
+    {
         return favoriteTypeId;
     }
 
-    public void setFavoriteTypeId(Long favoriteTypeId) {
+    public void setFavoriteTypeId(Long favoriteTypeId)
+    {
         this.favoriteTypeId = favoriteTypeId;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name == null ? null : name.trim();
     }
 
-    public Date getCreationTime() {
+    public Date getCreationTime()
+    {
         return creationTime;
     }
 
-    public void setCreationTime(Date creationTime) {
+    public void setCreationTime(Date creationTime)
+    {
         this.creationTime = creationTime;
     }
 
-    public Date getUpdateTime() {
+    public Date getUpdateTime()
+    {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Date updateTime)
+    {
         this.updateTime = updateTime;
     }
 }

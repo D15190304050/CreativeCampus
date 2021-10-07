@@ -1,23 +1,28 @@
 package com.creativecampus.commons.domain;
 
-public class Schools {
+public class Schools
+{
     private Long id;
 
     private String name;
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name == null ? null : name.trim();
     }
 }

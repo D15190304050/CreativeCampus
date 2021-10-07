@@ -2,7 +2,8 @@ package com.creativecampus.commons.domain;
 
 import java.util.Date;
 
-public class Students {
+public class Students
+{
     private Long id;
 
     private String studentNumber;
@@ -23,83 +24,103 @@ public class Students {
 
     private Date updateTime;
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public String getStudentNumber() {
+    public String getStudentNumber()
+    {
         return studentNumber;
     }
 
-    public void setStudentNumber(String studentNumber) {
+    public void setStudentNumber(String studentNumber)
+    {
         this.studentNumber = studentNumber == null ? null : studentNumber.trim();
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name == null ? null : name.trim();
     }
 
-    public Long getClassId() {
+    public Long getClassId()
+    {
         return classId;
     }
 
-    public void setClassId(Long classId) {
+    public void setClassId(Long classId)
+    {
         this.classId = classId;
     }
 
-    public Date getStartDate() {
+    public Date getStartDate()
+    {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Date startDate)
+    {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public Date getEndDate()
+    {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(Date endDate)
+    {
         this.endDate = endDate;
     }
 
-    public Long getCreatorId() {
+    public Long getCreatorId()
+    {
         return creatorId;
     }
 
-    public void setCreatorId(Long creatorId) {
+    public void setCreatorId(Long creatorId)
+    {
         this.creatorId = creatorId;
     }
 
-    public Date getCreationTime() {
+    public Date getCreationTime()
+    {
         return creationTime;
     }
 
-    public void setCreationTime(Date creationTime) {
+    public void setCreationTime(Date creationTime)
+    {
         this.creationTime = creationTime;
     }
 
-    public Long getUpdateOperatorId() {
+    public Long getUpdateOperatorId()
+    {
         return updateOperatorId;
     }
 
-    public void setUpdateOperatorId(Long updateOperatorId) {
+    public void setUpdateOperatorId(Long updateOperatorId)
+    {
         this.updateOperatorId = updateOperatorId;
     }
 
-    public Date getUpdateTime() {
+    public Date getUpdateTime()
+    {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Date updateTime)
+    {
         this.updateTime = updateTime;
     }
 }
