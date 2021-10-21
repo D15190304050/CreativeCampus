@@ -1,10 +1,15 @@
 package com.creativecampus.commons.domain;
 
+import com.creativecampus.commons.ErrorMessageTemplates;
+import com.creativecampus.commons.IValidate;
+import dataworks.OutString;
+import org.springframework.util.StringUtils;
+
 import java.util.Date;
 
-public class Teachers
+public class Teacher implements IValidate
 {
-    private Long id;
+    private long id;
 
     private String account;
 
@@ -18,18 +23,18 @@ public class Teachers
 
     private String encryptedPassword;
 
-    private Integer passwordEncryptionAlgorithmId;
+    private int passwordEncryptionAlgorithmId;
 
     private Date creationTime;
 
     private Date updateTime;
 
-    public Long getId()
+    public long getId()
     {
         return id;
     }
 
-    public void setId(Long id)
+    public void setId(long id)
     {
         this.id = id;
     }
@@ -94,12 +99,12 @@ public class Teachers
         this.encryptedPassword = encryptedPassword == null ? null : encryptedPassword.trim();
     }
 
-    public Integer getPasswordEncryptionAlgorithmId()
+    public int getPasswordEncryptionAlgorithmId()
     {
         return passwordEncryptionAlgorithmId;
     }
 
-    public void setPasswordEncryptionAlgorithmId(Integer passwordEncryptionAlgorithmId)
+    public void setPasswordEncryptionAlgorithmId(int passwordEncryptionAlgorithmId)
     {
         this.passwordEncryptionAlgorithmId = passwordEncryptionAlgorithmId;
     }
@@ -122,5 +127,59 @@ public class Teachers
     public void setUpdateTime(Date updateTime)
     {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public boolean validate(OutString errorMessage)
+    {
+        if (!StringUtils.hasText(account))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("account"));
+            return false;
+        }
+
+        if (!StringUtils.hasText(nickname))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("nickname"));
+            return false;
+        }
+
+        if (!StringUtils.hasText(avatarUrl))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("avatarUrl"));
+            return false;
+        }
+
+        if (!StringUtils.hasText(phoneNumber))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("phoneNumber"));
+            return false;
+        }
+
+        if (!StringUtils.hasText(email))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("email"));
+            return false;
+        }
+
+        if (!StringUtils.hasText(encryptedPassword))
+        {
+            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("encryptedPassword"));
+            return false;
+        }
+
+        if (creationTime == null)
+        {
+            errorMessage.setString(ErrorMessageTemplates.memberNullException("creationTime"));
+            return false;
+        }
+
+        if (updateTime == null)
+        {
+            errorMessage.setString(ErrorMessageTemplates.memberNullException("updateTime"));
+            return false;
+        }
+
+        return true;
     }
 }

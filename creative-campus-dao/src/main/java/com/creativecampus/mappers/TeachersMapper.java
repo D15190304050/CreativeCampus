@@ -1,16 +1,16 @@
 package com.creativecampus.mappers;
 
-import com.creativecampus.commons.domain.Teachers;
+import com.creativecampus.commons.domain.Teacher;
 import java.util.List;
 
 public interface TeachersMapper {
     int deleteByPrimaryKey(Long id);
 
-    int insert(Teachers record);
+    int insert(Teacher record);
 
-    Teachers selectByPrimaryKey(Long id);
+    Teacher selectByPrimaryKey(Long id);
 
-    List<Teachers> selectAll();
+    List<Teacher> selectAll();
 
-    int updateByPrimaryKey(Teachers record);
+    int updateByPrimaryKey(Teacher record);
 }

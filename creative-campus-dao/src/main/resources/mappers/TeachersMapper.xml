@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.creativecampus.mappers.TeachersMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Teachers">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Teacher">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="account" jdbcType="VARCHAR" property="account" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
@@ -17,7 +17,7 @@
     delete from teachers
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Teachers">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Teacher">
     insert into teachers (id, account, nickname, 
       avatar_url, phone_number, email, 
       encrypted_password, password_encryption_algorithm_id, 
@@ -27,7 +27,7 @@
       #{encryptedPassword,jdbcType=VARCHAR}, #{passwordEncryptionAlgorithmId,jdbcType=INTEGER}, 
       #{creationTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Teachers">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Teacher">
     update teachers
     set account = #{account,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
@@ -51,7 +51,7 @@
     password_encryption_algorithm_id, creation_time, update_time
     from teachers
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Teachers">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Teacher">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="account" jdbcType="VARCHAR" property="account" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
@@ -67,7 +67,7 @@
     delete from teachers
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Teachers">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Teacher">
     insert into teachers (id, account, nickname, 
       avatar_url, phone_number, email, 
       encrypted_password, password_encryption_algorithm_id, 
@@ -77,7 +77,7 @@
       #{encryptedPassword,jdbcType=VARCHAR}, #{passwordEncryptionAlgorithmId,jdbcType=INTEGER}, 
       #{creationTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Teachers">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Teacher">
     update teachers
     set account = #{account,jdbcType=VARCHAR},
       nickname = #{nickname,jdbcType=VARCHAR},
