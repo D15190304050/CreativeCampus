@@ -1,5 +1,7 @@
 package com.creativecampus.commons;
 
+import dataworks.data.json.JsonSerializer;
+
 import java.util.HashMap;
 
 public class ControllerResponse<TData>
@@ -93,5 +95,11 @@ public class ControllerResponse<TData>
     public void setOther(HashMap<String, Object> other)
     {
         this.other = other;
+    }
+
+    @Override
+    public String toString()
+    {
+        return JsonSerializer.serialize(this);
     }
 }

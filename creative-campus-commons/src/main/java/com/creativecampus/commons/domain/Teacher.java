@@ -1,32 +1,44 @@
 package com.creativecampus.commons.domain;
 
 import com.creativecampus.commons.ErrorMessageTemplates;
-import com.creativecampus.commons.IValidate;
-import dataworks.OutString;
-import org.springframework.util.StringUtils;
+import com.creativecampus.commons.validation.ArgumentValidation;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public class Teacher implements IValidate
+@ArgumentValidation
+public class Teacher
 {
     private long id;
 
+    @NotBlank(message = ErrorMessageTemplates.STRING_EMPTY_PREFIX + "account" + ErrorMessageTemplates.STRING_EMPTY_SUFFIX)
     private String account;
 
+    @NotBlank(message = ErrorMessageTemplates.STRING_EMPTY_PREFIX + "nickname" + ErrorMessageTemplates.STRING_EMPTY_SUFFIX)
     private String nickname;
 
+    @NotBlank(message = ErrorMessageTemplates.STRING_EMPTY_PREFIX + "avatarUrl" + ErrorMessageTemplates.STRING_EMPTY_SUFFIX)
     private String avatarUrl;
 
+    @NotBlank(message = ErrorMessageTemplates.STRING_EMPTY_PREFIX + "phoneNumber" + ErrorMessageTemplates.STRING_EMPTY_SUFFIX)
     private String phoneNumber;
 
+    @Email(message = ErrorMessageTemplates.EMAIL_FORMAT_EXCEPTION)
     private String email;
 
+    @NotBlank(message = ErrorMessageTemplates.STRING_EMPTY_PREFIX + "encryptedPassword" + ErrorMessageTemplates.STRING_EMPTY_SUFFIX)
     private String encryptedPassword;
 
+    @Min(1)
     private int passwordEncryptionAlgorithmId;
 
+    @NotNull
     private Date creationTime;
 
+    @NotNull
     private Date updateTime;
 
     public long getId()
@@ -127,59 +139,5 @@ public class Teacher implements IValidate
     public void setUpdateTime(Date updateTime)
     {
         this.updateTime = updateTime;
-    }
-
-    @Override
-    public boolean validate(OutString errorMessage)
-    {
-        if (!StringUtils.hasText(account))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("account"));
-            return false;
-        }
-
-        if (!StringUtils.hasText(nickname))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("nickname"));
-            return false;
-        }
-
-        if (!StringUtils.hasText(avatarUrl))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("avatarUrl"));
-            return false;
-        }
-
-        if (!StringUtils.hasText(phoneNumber))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("phoneNumber"));
-            return false;
-        }
-
-        if (!StringUtils.hasText(email))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("email"));
-            return false;
-        }
-
-        if (!StringUtils.hasText(encryptedPassword))
-        {
-            errorMessage.setString(ErrorMessageTemplates.stringEmptyException("encryptedPassword"));
-            return false;
-        }
-
-        if (creationTime == null)
-        {
-            errorMessage.setString(ErrorMessageTemplates.memberNullException("creationTime"));
-            return false;
-        }
-
-        if (updateTime == null)
-        {
-            errorMessage.setString(ErrorMessageTemplates.memberNullException("updateTime"));
-            return false;
-        }
-
-        return true;
     }
 }

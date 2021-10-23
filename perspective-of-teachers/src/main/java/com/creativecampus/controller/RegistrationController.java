@@ -5,6 +5,7 @@ import com.creativecampus.commons.ControllerResponse;
 import com.creativecampus.commons.Validator;
 import com.creativecampus.commons.domain.Teacher;
 import dataworks.OutString;
+import dataworks.data.json.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,17 +21,8 @@ public class RegistrationController
     @ResponseBody
     public ControllerResponse<Boolean> registerTeacher(@RequestBody Teacher teacher)
     {
-        OutString outErrorMessage = new OutString();
+        log.info("teacher = " + JsonSerializer.serialize(teacher));
 
-        if (!Validator.validate(teacher, outErrorMessage))
-        {
-            String errorMessage = outErrorMessage.getString();
-            log.error(errorMessage);
-//            return ControllerResponse.buildFailureResponse();
-        }
-
-
-
-        return null;
+        return ControllerResponse.buildSuccessResponse(true);
     }
 }
