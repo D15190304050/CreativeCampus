@@ -24,5 +24,11 @@
             <artifactId>creative-campus-dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.creativecampus</groupId>
+            <artifactId>creative-campus-commons</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>

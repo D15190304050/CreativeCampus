@@ -25,6 +25,15 @@
         <!-- lookup parent from repository -->
     </parent>
 
+    <profiles>
+        <profile>
+            <id>PC</id>
+            <properties>
+                <dataworks.path>D:/DinoStark/Projects/MaveLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>
+            </properties>
+        </profile>
+    </profiles>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -99,7 +108,8 @@
             <artifactId>dataworks</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>D:/DinoStark/Projects/MaveLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</systemPath>
+            <systemPath>${dataworks.path}</systemPath>
+<!--            <systemPath>D:/DinoStark/Projects/MaveLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</systemPath>-->
         </dependency>
     </dependencies>
 
