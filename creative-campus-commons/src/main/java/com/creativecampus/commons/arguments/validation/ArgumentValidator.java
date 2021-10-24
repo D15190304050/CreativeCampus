@@ -1,5 +1,6 @@
 package com.creativecampus.commons.arguments.validation;
 
+import com.creativecampus.commons.ErrorMessageTemplates;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
@@ -22,16 +23,15 @@ public class ArgumentValidator
         VALIDATOR = validatorFactory.getValidator();
     }
 
-    public static Set<ConstraintViolation<Object>> getConstraintViolation(Object argument)
+    private static Set<ConstraintViolation<Object>> getConstraintViolation(Object argument)
     {
-        if ((argument != null) && (argument.getClass().getAnnotation(MemberValidation.class) != null))
-//        if ((argument != null))
+        if (argument.getClass().getAnnotation(MemberValidation.class) != null)
             return VALIDATOR.validate(argument);
 
         return null;
     }
 
-    public static String collectErrorMessage(Set<ConstraintViolation<Object>> constraintViolationSet)
+    private static String collectErrorMessage(Set<ConstraintViolation<Object>> constraintViolationSet)
     {
         if (!CollectionUtils.isEmpty(constraintViolationSet))
         {
@@ -50,6 +50,11 @@ public class ArgumentValidator
 
     public static String getValidationErrorMessage(Object argument)
     {
+        // The default constraint validator only validate non-null arguments.
+        // Which means the argument-not-null constraint must be implemented here.
+        if (argument == null)
+            return ErrorMessageTemplates.ARGUMENT_NULL_EXCEPTION;
+
         return collectErrorMessage(getConstraintViolation(argument));
     }
 }

@@ -2,6 +2,7 @@ package com.creativecampus.commons.arguments.validation.aspects;
 
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.ServiceResponse;
+import com.creativecampus.commons.arguments.ArgumentBase;
 import com.creativecampus.commons.arguments.validation.ArgumentValidator;
 import dataworks.data.json.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
@@ -39,14 +40,16 @@ public class ArgumentValidationAspect
     {
         Object[] arguments = proceedingJoinPoint.getArgs();
 
-        for (Object argument : arguments)
+        for (int i = 0; i < arguments.length; i++)
         {
+            Object argument = arguments[i];
             String validationErrorMessage = ArgumentValidator.getValidationErrorMessage(argument);
 
             // Interrupt the execution of the called method and return argument exception.
             if (StringUtils.hasText(validationErrorMessage))
             {
-                log.error("Argument = " + JsonSerializer.serialize(argument));
+                log.error("Argument constraint violation found for: " + ArgumentBase.getMethodPath(proceedingJoinPoint));
+                log.error("Argument [" + i + "]" + " = " + JsonSerializer.serialize(argument));
                 log.error("Validation error message = " + validationErrorMessage);
                 return ServiceResponse.buildErrorResponse(CommonErrorResponses.ARGUMENT_EXCEPTION.getCode(), validationErrorMessage);
             }

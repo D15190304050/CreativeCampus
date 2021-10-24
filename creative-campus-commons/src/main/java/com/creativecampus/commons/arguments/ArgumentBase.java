@@ -14,4 +14,10 @@ public class ArgumentBase
         MethodSignature methodSignature = (MethodSignature) signature;
         return methodSignature.getParameterTypes();
     }
+
+    public static String getMethodPath(JoinPoint joinPoint)
+    {
+        Signature signature = joinPoint.getSignature();
+        return signature.getDeclaringTypeName() + "#" + signature.getName();
+    }
 }

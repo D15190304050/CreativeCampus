@@ -39,8 +39,7 @@ public class LogArgumentAspect
         {
             Class<?>[] parameterTypes = ArgumentBase.getParameterTypes(joinPoint);
 
-            Signature signature = joinPoint.getSignature();
-            log.info("Log arguments of " + signature.getDeclaringTypeName() + "#" + signature.getName());
+            log.info("Log arguments of " + ArgumentBase.getMethodPath(joinPoint));
             for (int i = 0; i < arguments.length; i++)
                 log.info("Argument [" + i + "] (" + parameterTypes[i].getName() + ") = " + JsonSerializer.serialize(arguments[i]));
         }
