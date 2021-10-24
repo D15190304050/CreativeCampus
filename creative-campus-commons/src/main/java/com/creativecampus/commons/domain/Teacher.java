@@ -1,7 +1,7 @@
 package com.creativecampus.commons.domain;
 
 import com.creativecampus.commons.ErrorMessageTemplates;
-import com.creativecampus.commons.validation.ArgumentValidation;
+import com.creativecampus.commons.arguments.validation.ArgumentValidation;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;

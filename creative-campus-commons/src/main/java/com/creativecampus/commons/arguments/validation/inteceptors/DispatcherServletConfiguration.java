@@ -1,4 +1,4 @@
-package com.creativecampus.commons.validation.inteceptors;
+package com.creativecampus.commons.arguments.validation.inteceptors;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;

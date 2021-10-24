@@ -1,10 +1,9 @@
-package com.creativecampus.commons.validation;
+package com.creativecampus.commons.arguments.validation;
 
 import java.lang.annotation.*;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-//@Inherited
 @Target({ElementType.TYPE, ElementType.METHOD})
 public @interface ArgumentValidation
 {

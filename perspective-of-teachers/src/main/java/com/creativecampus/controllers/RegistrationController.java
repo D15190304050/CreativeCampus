@@ -1,8 +1,9 @@
 package com.creativecampus.controllers;
 
 import com.creativecampus.commons.ServiceResponse;
+import com.creativecampus.commons.arguments.logs.LogArguments;
 import com.creativecampus.commons.domain.Teacher;
-import com.creativecampus.commons.validation.ArgumentValidation;
+import com.creativecampus.commons.arguments.validation.ArgumentValidation;
 import dataworks.data.json.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -13,14 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/register")
 @Slf4j
+@LogArguments
 public class RegistrationController
 {
     @RequestMapping("/registerTeacher")
     @ResponseBody
-    @ArgumentValidation
     public ServiceResponse<Boolean> registerTeacher(@RequestBody Teacher teacher)
     {
-        log.info("teacher = " + JsonSerializer.serialize(teacher));
 
         return ServiceResponse.buildSuccessResponse(true);
     }

@@ -1,9 +1,9 @@
-package com.creativecampus.commons.validation.inteceptors;
+package com.creativecampus.commons.arguments.validation.inteceptors;
 
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.validation.ArgumentValidation;
-import com.creativecampus.commons.validation.ArgumentValidationBase;
+import com.creativecampus.commons.arguments.validation.ArgumentValidation;
+import com.creativecampus.commons.arguments.validation.ArgumentValidationBase;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dataworks.Encoding;
@@ -57,8 +57,8 @@ public class ControllerArgumentValidationHandler implements HandlerInterceptor
                 String validationErrorMessage = ArgumentValidationBase.getValidationErrorMessage(argument);
                 if (StringUtils.hasText(validationErrorMessage))
                 {
-//                    writeErrorResponse(response, validationErrorMessage);
-//                    return false;
+                    writeErrorResponse(response, validationErrorMessage);
+                    return false;
                 }
             }
         }
