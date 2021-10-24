@@ -4,7 +4,7 @@ import dataworks.data.json.JsonSerializer;
 
 import java.util.HashMap;
 
-public class ControllerResponse<TData>
+public class ServiceResponse<TData>
 {
     public static final int SUCCESS_CODE = 0;
 
@@ -14,11 +14,11 @@ public class ControllerResponse<TData>
     private String message;
     private HashMap<String, Object> other;
 
-    public ControllerResponse()
+    public ServiceResponse()
     {
     }
 
-    public ControllerResponse(int code, boolean success, TData data, String message, HashMap<String, Object> other)
+    public ServiceResponse(int code, boolean success, TData data, String message, HashMap<String, Object> other)
     {
         this.code = code;
         this.success = success;
@@ -27,24 +27,24 @@ public class ControllerResponse<TData>
         this.other = other;
     }
 
-    public static<TData> ControllerResponse<TData> buildSuccessResponse(TData data)
+    public static<TData> ServiceResponse<TData> buildSuccessResponse(TData data)
     {
-        return new ControllerResponse<>(0, true, data, "", null);
+        return new ServiceResponse<>(0, true, data, "", null);
     }
 
-    public static<TData> ControllerResponse<TData> buildSuccessResponse(TData data, String message)
+    public static<TData> ServiceResponse<TData> buildSuccessResponse(TData data, String message)
     {
-        return new ControllerResponse<>(0, true, data, message, null);
+        return new ServiceResponse<>(0, true, data, message, null);
     }
 
-    public static<TData> ControllerResponse<TData> buildFailureResponse(int code, String message)
+    public static<TData> ServiceResponse<TData> buildErrorResponse(int code, String message)
     {
-        return new ControllerResponse<>(code, false, null, message, null);
+        return new ServiceResponse<>(code, false, null, message, null);
     }
 
-    public static<TData> ControllerResponse<TData> buildFailureResponse(CommonFailureResponses response)
+    public static<TData> ServiceResponse<TData> buildErrorResponse(CommonErrorResponses response)
     {
-        return new ControllerResponse<>(response.getCode(), false, null, response.getMessage(), null);
+        return new ServiceResponse<>(response.getCode(), false, null, response.getMessage(), null);
     }
 
     public int getCode()

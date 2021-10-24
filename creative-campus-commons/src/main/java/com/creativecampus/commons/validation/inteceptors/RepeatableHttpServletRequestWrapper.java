@@ -1,4 +1,4 @@
-package com.creativecampus.commons.inteceptors;
+package com.creativecampus.commons.validation.inteceptors;
 
 import org.springframework.util.StreamUtils;
 
@@ -13,7 +13,7 @@ public class RepeatableHttpServletRequestWrapper extends HttpServletRequestWrapp
     /**
      * Cache http request body.
      */
-    private byte[] requestBody;
+    private final byte[] requestBody;
 
     /**
      * Constructs a request object wrapping the given request.
@@ -28,7 +28,7 @@ public class RepeatableHttpServletRequestWrapper extends HttpServletRequestWrapp
     }
 
     @Override
-    public ServletInputStream getInputStream() throws IOException
+    public ServletInputStream getInputStream()
     {
         InputStream bodyStream = new ByteArrayInputStream(requestBody);
 
@@ -62,7 +62,7 @@ public class RepeatableHttpServletRequestWrapper extends HttpServletRequestWrapp
     }
 
     @Override
-    public BufferedReader getReader() throws IOException
+    public BufferedReader getReader()
     {
         InputStream bodyStream = new ByteArrayInputStream(requestBody);
         return new BufferedReader(new InputStreamReader(bodyStream));

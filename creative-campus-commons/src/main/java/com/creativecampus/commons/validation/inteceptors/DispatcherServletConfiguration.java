@@ -1,4 +1,4 @@
-package com.creativecampus.commons.inteceptors;
+package com.creativecampus.commons.validation.inteceptors;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
@@ -16,6 +16,7 @@ public class DispatcherServletConfiguration implements WebMvcConfigurer
     @Override
     public void addInterceptors(InterceptorRegistry registry)
     {
+        // Uncomment the following line to open argument validation for all requested methods.
         registry.addInterceptor(new ControllerArgumentValidationHandler()).addPathPatterns("/**");
     }
 
