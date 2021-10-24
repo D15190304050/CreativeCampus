@@ -8,7 +8,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration
+//@Configuration
 public class DispatcherServletConfiguration implements WebMvcConfigurer
 {
     // Add all needed interceptors here.

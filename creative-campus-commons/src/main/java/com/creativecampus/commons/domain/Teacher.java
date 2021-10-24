@@ -1,7 +1,7 @@
 package com.creativecampus.commons.domain;
 
 import com.creativecampus.commons.ErrorMessageTemplates;
-import com.creativecampus.commons.arguments.validation.ArgumentValidation;
+import com.creativecampus.commons.arguments.validation.MemberValidation;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@ArgumentValidation
+@MemberValidation
 public class Teacher
 {
     private long id;

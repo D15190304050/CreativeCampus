@@ -8,7 +8,6 @@ import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,7 +24,13 @@ public class LogArgumentAspect
     @Pointcut("@within(com.creativecampus.commons.arguments.logs.LogArguments)")
     private void logArgumentJoinPoint(){}
 
-    @Before("returnTypeJoinPoint() && logArgumentJoinPoint()")
+    @Pointcut("@within(com.creativecampus.commons.arguments.LogAndValidate)")
+    private void logAndValidateJoinPoint(){}
+
+    @Pointcut("logArgumentJoinPoint() || logAndValidateJoinPoint()")
+    private void acceptableAnnotations(){}
+
+    @Before("returnTypeJoinPoint() && acceptableAnnotations()")
     public void logArguments(JoinPoint joinPoint)
     {
         Object[] arguments = joinPoint.getArgs();
@@ -34,7 +39,8 @@ public class LogArgumentAspect
         {
             Class<?>[] parameterTypes = ArgumentBase.getParameterTypes(joinPoint);
 
-            log.info("Log arguments of " + joinPoint.getSignature().getName());
+            Signature signature = joinPoint.getSignature();
+            log.info("Log arguments of " + signature.getDeclaringTypeName() + "#" + signature.getName());
             for (int i = 0; i < arguments.length; i++)
                 log.info("Argument [" + i + "] (" + parameterTypes[i].getName() + ") = " + JsonSerializer.serialize(arguments[i]));
         }

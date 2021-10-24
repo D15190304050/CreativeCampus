@@ -10,9 +10,9 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 
 @Slf4j
-public class ArgumentValidationBase
+public class ArgumentValidator
 {
-    private ArgumentValidationBase(){}
+    private ArgumentValidator(){}
 
     private static final Validator VALIDATOR;
 
@@ -24,7 +24,8 @@ public class ArgumentValidationBase
 
     public static Set<ConstraintViolation<Object>> getConstraintViolation(Object argument)
     {
-        if ((argument != null) && (argument.getClass().getAnnotation(ArgumentValidation.class) != null))
+        if ((argument != null) && (argument.getClass().getAnnotation(MemberValidation.class) != null))
+//        if ((argument != null))
             return VALIDATOR.validate(argument);
 
         return null;
@@ -38,7 +39,7 @@ public class ArgumentValidationBase
             for (ConstraintViolation<Object> violation : constraintViolationSet)
             {
                 String errorMessage = "Violation: " + violation.getPropertyPath() + " " + violation.getMessage();
-                log.error(errorMessage);
+//                log.error(errorMessage);
                 errorMessageBuilder.append(errorMessage).append(System.lineSeparator());
             }
             return errorMessageBuilder.toString();
