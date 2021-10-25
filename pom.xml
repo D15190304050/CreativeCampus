@@ -27,14 +27,17 @@
 
     <profiles>
         <profile>
-            <id>PC</id>
+            <id>primary</id>
             <properties>
-                <dataworks.path>D:/DinoStark/Projects/MaveLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>
+                <dataworks.path>D:/DinoStark/Projects/MavenLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>
+<!--                <dataworks.path>${settings.localRepository}/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>-->
+
             </properties>
         </profile>
     </profiles>
 
     <properties>
+        <x>${settings.localRepository}</x>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -109,7 +112,9 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${dataworks.path}</systemPath>
-<!--            <systemPath>D:/DinoStark/Projects/MaveLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</systemPath>-->
+
+<!--            <systemPath>${settings.localRepository}/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</systemPath>-->
+<!--            <systemPath>D:/DinoStark/Projects/MavenLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</systemPath>-->
         </dependency>
     </dependencies>
 
