@@ -1,9 +1,8 @@
-package com.creativecampus.commons.arguments.validation.aspects;
+package com.creativecampus.commons.runtime.validation;
 
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.arguments.ArgumentBase;
-import com.creativecampus.commons.arguments.validation.ArgumentValidator;
+import com.creativecampus.commons.runtime.ArgumentBase;
 import dataworks.data.json.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -19,7 +18,7 @@ import org.springframework.util.StringUtils;
 public class ArgumentValidationAspect
 {
     //    @Pointcut("@annotation(com.creativecampus.commons.arguments.validation.ArgumentValidation))")
-    @Pointcut("@within(com.creativecampus.commons.arguments.validation.ArgumentValidation))")
+    @Pointcut("@within(com.creativecampus.commons.runtime.validation.ArgumentValidation))")
     private void argumentValidationJoinPoint()
     {
     }
@@ -29,7 +28,7 @@ public class ArgumentValidationAspect
     {
     }
 
-    @Pointcut("@within(com.creativecampus.commons.arguments.LogAndValidate)")
+    @Pointcut("@within(com.creativecampus.commons.runtime.LogAndValidate)")
     private void logAndValidateJoinPoint(){}
 
     @Pointcut("argumentValidationJoinPoint() || logAndValidateJoinPoint()")
@@ -51,7 +50,7 @@ public class ArgumentValidationAspect
                 log.error("Argument constraint violation found for: " + ArgumentBase.getMethodPath(proceedingJoinPoint));
                 log.error("Argument [" + i + "]" + " = " + JsonSerializer.serialize(argument));
                 log.error("Validation error message = " + validationErrorMessage);
-                return ServiceResponse.buildErrorResponse(CommonErrorResponses.ARGUMENT_EXCEPTION.getCode(), validationErrorMessage);
+//                return ServiceResponse.buildErrorResponse(CommonErrorResponses.ARGUMENT_EXCEPTION.getCode(), validationErrorMessage);
             }
         }
 

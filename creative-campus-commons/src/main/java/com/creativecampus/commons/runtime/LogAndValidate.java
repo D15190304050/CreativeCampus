@@ -1,10 +1,10 @@
-package com.creativecampus.commons.arguments.validation;
+package com.creativecampus.commons.runtime;
 
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Target(ElementType.TYPE)
-public @interface MemberValidation
+public @interface LogAndValidate
 {
 }

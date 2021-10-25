@@ -1,10 +1,10 @@
-package com.creativecampus.commons.arguments;
+package com.creativecampus.commons.runtime.logs;
 
 import java.lang.annotation.*;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
 @Target(ElementType.TYPE)
-public @interface LogAndValidate
+@Documented
+public @interface LogException
 {
 }

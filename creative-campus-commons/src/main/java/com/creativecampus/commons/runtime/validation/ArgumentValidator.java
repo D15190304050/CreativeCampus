@@ -1,4 +1,4 @@
-package com.creativecampus.commons.arguments.validation;
+package com.creativecampus.commons.runtime.validation;
 
 import com.creativecampus.commons.ErrorMessageTemplates;
 import lombok.extern.slf4j.Slf4j;

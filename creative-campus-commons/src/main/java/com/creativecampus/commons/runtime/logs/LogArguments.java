@@ -1,4 +1,4 @@
-package com.creativecampus.commons.arguments.logs;
+package com.creativecampus.commons.runtime.logs;
 
 import java.lang.annotation.*;
 

@@ -1,10 +1,9 @@
-package com.creativecampus.commons.arguments.logs;
+package com.creativecampus.commons.runtime.logs;
 
-import com.creativecampus.commons.arguments.ArgumentBase;
+import com.creativecampus.commons.runtime.ArgumentBase;
 import dataworks.data.json.JsonSerializer;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -21,10 +20,10 @@ public class LogArgumentAspect
     @Pointcut("execution(public com.creativecampus.commons.ServiceResponse com.creativecampus..*.*(..))")
     private void returnTypeJoinPoint(){}
 
-    @Pointcut("@within(com.creativecampus.commons.arguments.logs.LogArguments)")
+    @Pointcut("@within(com.creativecampus.commons.runtime.logs.LogArguments)")
     private void logArgumentJoinPoint(){}
 
-    @Pointcut("@within(com.creativecampus.commons.arguments.LogAndValidate)")
+    @Pointcut("@within(com.creativecampus.commons.runtime.LogAndValidate)")
     private void logAndValidateJoinPoint(){}
 
     @Pointcut("logArgumentJoinPoint() || logAndValidateJoinPoint()")

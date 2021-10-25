@@ -1,8 +1,8 @@
-package com.creativecampus.commons.arguments.validation.inteceptors;
+package com.creativecampus.commons.runtime.validation.inteceptors;
 
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.arguments.validation.ArgumentValidator;
+import com.creativecampus.commons.runtime.validation.ArgumentValidator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dataworks.Encoding;
