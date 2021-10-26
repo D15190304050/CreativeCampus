@@ -34,6 +34,8 @@ public class ArgumentValidationAspect
     @Pointcut("argumentValidationJoinPoint() || logAndValidateJoinPoint()")
     private void acceptableAnnotations(){}
 
+    // Use @Around here because we want to interrupt the execution of the target method and return a result that
+    // contains error message when argument validation fails.
     @Around("acceptableAnnotations() && returnTypeJoinPoint()")
     public Object validateArgument(ProceedingJoinPoint proceedingJoinPoint) throws Throwable
     {
@@ -50,7 +52,7 @@ public class ArgumentValidationAspect
                 log.error("Argument constraint violation found for: " + ArgumentBase.getMethodPath(proceedingJoinPoint));
                 log.error("Argument [" + i + "]" + " = " + JsonSerializer.serialize(argument));
                 log.error("Validation error message = " + validationErrorMessage);
-//                return ServiceResponse.buildErrorResponse(CommonErrorResponses.ARGUMENT_EXCEPTION.getCode(), validationErrorMessage);
+                return ServiceResponse.buildErrorResponse(CommonErrorResponses.ARGUMENT_EXCEPTION.getCode(), validationErrorMessage);
             }
         }
 
