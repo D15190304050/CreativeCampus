@@ -6,7 +6,9 @@ public enum CommonErrorResponses
     NOT_LOGIN(1, "Not login."),
     NO_SUCH_TEACHER(2, "No such teacher."),
     ARGUMENT_NULL_EXCEPTION(3, "The required argument is null."),
-    ARGUMENT_EXCEPTION(4, "The given argument is invalid.")
+    ARGUMENT_EXCEPTION(4, "The given argument is invalid."),
+    SYSTEM_ERROR(5, "Error when executing ..."),
+    ACCOUNT_EXISTS(6, "The account exists, please try others."),
     ;
 
     private int code;

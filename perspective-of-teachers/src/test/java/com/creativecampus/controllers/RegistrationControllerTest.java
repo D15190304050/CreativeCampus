@@ -23,6 +23,7 @@ public class RegistrationControllerTest
 //        ServiceResponse<Boolean> response = registrationController.registerTeacher(null);
 //        log.info("response = " + JsonSerializer.serialize(response));
 
+        log.info("Start test...");
         try
         {
             ServiceResponse<Boolean> response = registrationController.registerTeacher(null);
@@ -30,7 +31,7 @@ public class RegistrationControllerTest
         }
         catch (Throwable ignored)
         {
-
+            log.error("Error when testing...");
         }
     }
 }

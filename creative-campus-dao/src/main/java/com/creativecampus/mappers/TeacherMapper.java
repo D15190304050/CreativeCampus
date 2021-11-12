@@ -3,7 +3,8 @@ package com.creativecampus.mappers;
 import com.creativecampus.commons.domain.Teacher;
 import java.util.List;
 
-public interface TeachersMapper {
+public interface TeacherMapper
+{
     int deleteByPrimaryKey(Long id);
 
     int insert(Teacher record);
@@ -13,4 +14,6 @@ public interface TeachersMapper {
     List<Teacher> selectAll();
 
     int updateByPrimaryKey(Teacher record);
+
+    int getCountByAccount(String account);
 }
