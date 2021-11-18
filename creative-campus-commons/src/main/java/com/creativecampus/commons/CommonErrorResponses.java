@@ -9,6 +9,7 @@ public enum CommonErrorResponses
     ARGUMENT_EXCEPTION(4, "The given argument is invalid."),
     SYSTEM_ERROR(5, "Error when executing ..."),
     ACCOUNT_EXISTS(6, "The account exists, please try others."),
+    ACCOUNT_PASSWORD_NOT_MATCH(7, "The account does not exist or the password is wrong."),
     ;
 
     private int code;

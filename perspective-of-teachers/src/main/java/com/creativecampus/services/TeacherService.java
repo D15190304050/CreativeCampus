@@ -32,8 +32,19 @@ public class TeacherService implements ITeacherService
         if (exists(teacher.getAccount()))
             return ServiceResponse.buildErrorResponse(CommonErrorResponses.ACCOUNT_EXISTS);
 
+        int insertionCount = teacherMapper.insertTeacher(teacher);
 
-
-        return ServiceResponse.buildSuccessResponse(true);
+        return ServiceResponse.buildSuccessResponse(insertionCount == 1);
     }
+
+    public ServiceResponse<Boolean> login(String account, String encryptedPassword)
+    {
+        int matchCount = teacherMapper.getCountByAccountAndEncryptedPassword(account, encryptedPassword);
+        if (matchCount == 1)
+            return ServiceResponse.buildSuccessResponse(true);
+        else
+            return ServiceResponse.buildErrorResponse(CommonErrorResponses.ACCOUNT_PASSWORD_NOT_MATCH);
+    }
+
+
 }

@@ -17,7 +17,7 @@
         delete from teachers
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="com.creativecampus.commons.domain.Teacher">
+    <insert id="insertTeacher" parameterType="com.creativecampus.commons.domain.Teacher">
         insert into teachers (id, account, nickname,
                               avatar_url, phone_number, email,
                               encrypted_password, password_encryption_algorithm_id,
@@ -104,5 +104,9 @@
 
     <select id="getCountByAccount" resultType="int">
         SELECT COUNT(*) FROM teachers WHERE `account` = #{account}
+    </select>
+
+    <select id="getCountByAccountAndEncryptedPassword" resultType="int">
+        SELECT COUNT(*) FROM teachers WHERE account = #{account} AND encrypted_password = #{encryptedPassword};
     </select>
 </mapper>
