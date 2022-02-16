@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.AdministratorsMapper">
-    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrators">
+<mapper namespace="com.creativecampus.mappers.AdministratorMapper">
+    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrator">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="account_id" jdbcType="BIGINT" property="accountId"/>
     </resultMap>
@@ -10,11 +10,11 @@
         from administrators
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrators">
+    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrator">
         insert into administrators (id, account_id)
         values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT})
     </insert>
-    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrators">
+    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrator">
         update administrators
         set account_id = #{accountId,jdbcType=BIGINT}
         where id = #{id,jdbcType=BIGINT}
@@ -28,7 +28,7 @@
         select id, account_id
         from administrators
     </select>
-    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrators">
+    <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Administrator">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="account_id" jdbcType="BIGINT" property="accountId"/>
     </resultMap>
@@ -37,11 +37,11 @@
         from administrators
         where id = #{id,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrators">
+    <insert id="insert" parameterType="com.creativecampus.commons.domain.Administrator">
         insert into administrators (id, account_id)
         values (#{id,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT})
     </insert>
-    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrators">
+    <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Administrator">
         update administrators
         set account_id = #{accountId,jdbcType=BIGINT}
         where id = #{id,jdbcType=BIGINT}

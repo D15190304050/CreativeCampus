@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.HomeworkMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Homework">
+<mapper namespace="com.creativecampus.mappers.QuestionSetMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionSet">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -16,7 +16,7 @@
     delete from homework
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Homework">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionSet">
     insert into homework (id, name, description, 
       discipline_id, homework_body_url, creator_id, 
       creation_time, update_operator_id, update_time
@@ -26,7 +26,7 @@
       #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Homework">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionSet">
     update homework
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
@@ -49,7 +49,7 @@
     update_operator_id, update_time
     from homework
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Homework">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionSet">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -64,7 +64,7 @@
     delete from homework
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Homework">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionSet">
     insert into homework (id, name, description, 
       discipline_id, homework_body_url, creator_id, 
       creation_time, update_operator_id, update_time
@@ -74,7 +74,7 @@
       #{creationTime,jdbcType=TIMESTAMP}, #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Homework">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionSet">
     update homework
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},

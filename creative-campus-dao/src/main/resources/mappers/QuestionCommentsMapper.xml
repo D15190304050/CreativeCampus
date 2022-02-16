@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.QuestionCommentsMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComments">
+<mapper namespace="com.creativecampus.mappers.QuestionCommentMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComment">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="question_id" jdbcType="BIGINT" property="questionId" />
     <result column="pre_question_comment_id" jdbcType="BIGINT" property="preQuestionCommentId" />
@@ -14,7 +14,7 @@
     delete from question_comments
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComments">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComment">
     insert into question_comments (id, question_id, pre_question_comment_id, 
       question_comment_content_id, account_id, publish_time, 
       is_deleted)
@@ -22,7 +22,7 @@
       #{questionCommentContentId,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, 
       #{isDeleted,jdbcType=BIT})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComments">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComment">
     update question_comments
     set question_id = #{questionId,jdbcType=BIGINT},
       pre_question_comment_id = #{preQuestionCommentId,jdbcType=BIGINT},
@@ -43,7 +43,7 @@
     publish_time, is_deleted
     from question_comments
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComments">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.QuestionComment">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="question_id" jdbcType="BIGINT" property="questionId" />
     <result column="pre_question_comment_id" jdbcType="BIGINT" property="preQuestionCommentId" />
@@ -56,7 +56,7 @@
     delete from question_comments
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComments">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.QuestionComment">
     insert into question_comments (id, question_id, pre_question_comment_id, 
       question_comment_content_id, account_id, publish_time, 
       is_deleted)
@@ -64,7 +64,7 @@
       #{questionCommentContentId,jdbcType=BIGINT}, #{accountId,jdbcType=BIGINT}, #{publishTime,jdbcType=TIMESTAMP}, 
       #{isDeleted,jdbcType=BIT})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComments">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.QuestionComment">
     update question_comments
     set question_id = #{questionId,jdbcType=BIGINT},
       pre_question_comment_id = #{preQuestionCommentId,jdbcType=BIGINT},

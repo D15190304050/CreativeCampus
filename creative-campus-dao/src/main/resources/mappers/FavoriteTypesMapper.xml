@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.FavoriteTypesMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FavoriteTypes">
+<mapper namespace="com.creativecampus.mappers.FavoriteTypeMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FavoriteType">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -10,13 +10,13 @@
     delete from favorite_types
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.FavoriteTypes">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.FavoriteType">
     insert into favorite_types (id, name, description
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FavoriteTypes">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FavoriteType">
     update favorite_types
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}
@@ -31,7 +31,7 @@
     select id, name, description
     from favorite_types
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FavoriteTypes">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.FavoriteType">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -40,13 +40,13 @@
     delete from favorite_types
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.FavoriteTypes">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.FavoriteType">
     insert into favorite_types (id, name, description
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FavoriteTypes">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.FavoriteType">
     update favorite_types
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}

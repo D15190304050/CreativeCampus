@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.SemestersMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Semesters">
+<mapper namespace="com.creativecampus.mappers.SemesterMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Semester">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="approximate_start_month" jdbcType="INTEGER" property="approximateStartMonth" />
@@ -13,7 +13,7 @@
     delete from semesters
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Semesters">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Semester">
     insert into semesters (id, name, approximate_start_month, 
       approximate_start_day, approximate_end_month, 
       approximate_end_day)
@@ -21,7 +21,7 @@
       #{approximateStartDay,jdbcType=INTEGER}, #{approximateEndMonth,jdbcType=INTEGER}, 
       #{approximateEndDay,jdbcType=INTEGER})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Semesters">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Semester">
     update semesters
     set name = #{name,jdbcType=VARCHAR},
       approximate_start_month = #{approximateStartMonth,jdbcType=INTEGER},
@@ -41,7 +41,7 @@
     approximate_end_day
     from semesters
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Semesters">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Semester">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="approximate_start_month" jdbcType="INTEGER" property="approximateStartMonth" />
@@ -53,7 +53,7 @@
     delete from semesters
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Semesters">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Semester">
     insert into semesters (id, name, approximate_start_month, 
       approximate_start_day, approximate_end_month, 
       approximate_end_day)
@@ -61,7 +61,7 @@
       #{approximateStartDay,jdbcType=INTEGER}, #{approximateEndMonth,jdbcType=INTEGER}, 
       #{approximateEndDay,jdbcType=INTEGER})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Semesters">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Semester">
     update semesters
     set name = #{name,jdbcType=VARCHAR},
       approximate_start_month = #{approximateStartMonth,jdbcType=INTEGER},

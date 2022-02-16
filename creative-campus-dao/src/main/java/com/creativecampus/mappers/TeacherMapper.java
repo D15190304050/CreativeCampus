@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface TeacherMapper
 {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(long id);
 
     int insertTeacher(Teacher record);
 
-    Teacher selectByPrimaryKey(Long id);
+    Teacher selectByPrimaryKey(long id);
 
     List<Teacher> selectAll();
 

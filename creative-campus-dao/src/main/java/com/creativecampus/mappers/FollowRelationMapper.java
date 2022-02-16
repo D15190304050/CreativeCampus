@@ -4,11 +4,11 @@ import com.creativecampus.commons.domain.FollowRelation;
 import java.util.List;
 
 public interface FollowRelationMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(long id);
 
     int insert(FollowRelation record);
 
-    FollowRelation selectByPrimaryKey(Long id);
+    FollowRelation selectByPrimaryKey(long id);
 
     List<FollowRelation> selectAll();
 

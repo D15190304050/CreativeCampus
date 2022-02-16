@@ -1,23 +1,23 @@
 package com.creativecampus.commons.domain;
 
 public class Grades {
-    private Long id;
+    private long id;
 
     private String name;
 
-    private Integer approximateStartMonth;
+    private int approximateStartMonth;
 
-    private Integer approximateStartDay;
+    private int approximateStartDay;
 
-    private Integer approximateEndMonth;
+    private int approximateEndMonth;
 
-    private Integer approximateEndDay;
+    private int approximateEndDay;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -29,35 +29,35 @@ public class Grades {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getApproximateStartMonth() {
+    public int getApproximateStartMonth() {
         return approximateStartMonth;
     }
 
-    public void setApproximateStartMonth(Integer approximateStartMonth) {
+    public void setApproximateStartMonth(int approximateStartMonth) {
         this.approximateStartMonth = approximateStartMonth;
     }
 
-    public Integer getApproximateStartDay() {
+    public int getApproximateStartDay() {
         return approximateStartDay;
     }
 
-    public void setApproximateStartDay(Integer approximateStartDay) {
+    public void setApproximateStartDay(int approximateStartDay) {
         this.approximateStartDay = approximateStartDay;
     }
 
-    public Integer getApproximateEndMonth() {
+    public int getApproximateEndMonth() {
         return approximateEndMonth;
     }
 
-    public void setApproximateEndMonth(Integer approximateEndMonth) {
+    public void setApproximateEndMonth(int approximateEndMonth) {
         this.approximateEndMonth = approximateEndMonth;
     }
 
-    public Integer getApproximateEndDay() {
+    public int getApproximateEndDay() {
         return approximateEndDay;
     }
 
-    public void setApproximateEndDay(Integer approximateEndDay) {
+    public void setApproximateEndDay(int approximateEndDay) {
         this.approximateEndDay = approximateEndDay;
     }
 }

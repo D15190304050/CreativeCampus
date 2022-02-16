@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.KnowledgePointsMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.KnowledgePoints">
+<mapper namespace="com.creativecampus.mappers.KnowledgePointMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.KnowledgePoint">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -18,7 +18,7 @@
     delete from knowledge_points
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.KnowledgePoints">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.KnowledgePoint">
     insert into knowledge_points (id, discipline_id, name, 
       description_url, grade_id, semester_id, 
       frequency_of_exams, creator_id, creation_time, 
@@ -28,7 +28,7 @@
       #{frequencyOfExams,jdbcType=DOUBLE}, #{creatorId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, 
       #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.KnowledgePoints">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.KnowledgePoint">
     update knowledge_points
     set discipline_id = #{disciplineId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},
@@ -53,7 +53,7 @@
     creator_id, creation_time, update_operator_id, update_time
     from knowledge_points
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.KnowledgePoints">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.KnowledgePoint">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -70,7 +70,7 @@
     delete from knowledge_points
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.KnowledgePoints">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.KnowledgePoint">
     insert into knowledge_points (id, discipline_id, name, 
       description_url, grade_id, semester_id, 
       frequency_of_exams, creator_id, creation_time, 
@@ -80,7 +80,7 @@
       #{frequencyOfExams,jdbcType=DOUBLE}, #{creatorId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, 
       #{updateOperatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.KnowledgePoints">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.KnowledgePoint">
     update knowledge_points
     set discipline_id = #{disciplineId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},

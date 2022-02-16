@@ -1,9 +1,8 @@
 package com.creativecampus.controllers;
 
 import com.creativecampus.api.ITeacherService;
-import com.creativecampus.commons.LogicOnly;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.runtime.LogAndValidate;
+import com.creativecampus.commons.domain.Student;
 import com.creativecampus.commons.domain.Teacher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +24,12 @@ public class RegistrationController
     public ServiceResponse<Boolean> registerTeacher(@RequestBody Teacher teacher)
     {
         return teacherService.registerTeacher(teacher);
+    }
+
+    @RequestMapping("/registerStudent")
+    @ResponseBody
+    public ServiceResponse<Boolean> registerStudent(@RequestBody Student student)
+    {
+        return null;
     }
 }

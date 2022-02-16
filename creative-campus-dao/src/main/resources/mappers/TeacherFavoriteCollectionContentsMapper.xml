@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.TeacherFavoriteCollectionContentsMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+<mapper namespace="com.creativecampus.mappers.TeacherFavoriteCollectionContentMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="collection_id" jdbcType="BIGINT" property="collectionId" />
     <result column="content_id" jdbcType="BIGINT" property="contentId" />
@@ -12,13 +12,13 @@
     delete from teacher_favorite_collection_contents
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     insert into teacher_favorite_collection_contents (id, collection_id, content_id, 
       creation_time, update_time)
     values (#{id,jdbcType=BIGINT}, #{collectionId,jdbcType=BIGINT}, #{contentId,jdbcType=BIGINT}, 
       #{creationTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     update teacher_favorite_collection_contents
     set collection_id = #{collectionId,jdbcType=BIGINT},
       content_id = #{contentId,jdbcType=BIGINT},
@@ -35,7 +35,7 @@
     select id, collection_id, content_id, creation_time, update_time
     from teacher_favorite_collection_contents
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="collection_id" jdbcType="BIGINT" property="collectionId" />
     <result column="content_id" jdbcType="BIGINT" property="contentId" />
@@ -46,13 +46,13 @@
     delete from teacher_favorite_collection_contents
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     insert into teacher_favorite_collection_contents (id, collection_id, content_id, 
       creation_time, update_time)
     values (#{id,jdbcType=BIGINT}, #{collectionId,jdbcType=BIGINT}, #{contentId,jdbcType=BIGINT}, 
       #{creationTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContents">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.TeacherFavoriteCollectionContent">
     update teacher_favorite_collection_contents
     set collection_id = #{collectionId,jdbcType=BIGINT},
       content_id = #{contentId,jdbcType=BIGINT},

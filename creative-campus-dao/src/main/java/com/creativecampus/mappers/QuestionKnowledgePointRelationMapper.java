@@ -4,11 +4,11 @@ import com.creativecampus.commons.domain.QuestionKnowledgePointRelation;
 import java.util.List;
 
 public interface QuestionKnowledgePointRelationMapper {
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(long id);
 
     int insert(QuestionKnowledgePointRelation record);
 
-    QuestionKnowledgePointRelation selectByPrimaryKey(Long id);
+    QuestionKnowledgePointRelation selectByPrimaryKey(long id);
 
     List<QuestionKnowledgePointRelation> selectAll();
 

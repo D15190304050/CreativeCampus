@@ -3,35 +3,35 @@ package com.creativecampus.commons.domain;
 import java.util.Date;
 
 public class FollowRelation {
-    private Long id;
+    private long id;
 
-    private Long sourceAccountId;
+    private long sourceAccountId;
 
-    private Long destinationAccountId;
+    private long destinationAccountId;
 
     private Date startTime;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getSourceAccountId() {
+    public long getSourceAccountId() {
         return sourceAccountId;
     }
 
-    public void setSourceAccountId(Long sourceAccountId) {
+    public void setSourceAccountId(long sourceAccountId) {
         this.sourceAccountId = sourceAccountId;
     }
 
-    public Long getDestinationAccountId() {
+    public long getDestinationAccountId() {
         return destinationAccountId;
     }
 
-    public void setDestinationAccountId(Long destinationAccountId) {
+    public void setDestinationAccountId(long destinationAccountId) {
         this.destinationAccountId = destinationAccountId;
     }
 

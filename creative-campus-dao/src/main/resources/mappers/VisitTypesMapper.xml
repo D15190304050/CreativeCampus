@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.VisitTypesMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.VisitTypes">
+<mapper namespace="com.creativecampus.mappers.VisitTypeMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.VisitType">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -10,13 +10,13 @@
     delete from visit_types
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.VisitTypes">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.VisitType">
     insert into visit_types (id, name, description
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.VisitTypes">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.VisitType">
     update visit_types
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}
@@ -31,7 +31,7 @@
     select id, name, description
     from visit_types
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.VisitTypes">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.VisitType">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -40,13 +40,13 @@
     delete from visit_types
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.VisitTypes">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.VisitType">
     insert into visit_types (id, name, description
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.VisitTypes">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.VisitType">
     update visit_types
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR}

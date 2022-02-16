@@ -3,29 +3,29 @@ package com.creativecampus.commons.domain;
 import java.util.Date;
 
 public class Disciplines {
-    private Long id;
+    private long id;
 
     private String name;
 
     private String description;
 
-    private Long parentDisciplineId;
+    private long parentDisciplineId;
 
-    private Integer level;
+    private int level;
 
-    private Long creatorId;
+    private long creatorId;
 
     private Date creationTime;
 
-    private Long updateOperatorId;
+    private long updateOperatorId;
 
     private Date updateTime;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -45,27 +45,27 @@ public class Disciplines {
         this.description = description == null ? null : description.trim();
     }
 
-    public Long getParentDisciplineId() {
+    public long getParentDisciplineId() {
         return parentDisciplineId;
     }
 
-    public void setParentDisciplineId(Long parentDisciplineId) {
+    public void setParentDisciplineId(long parentDisciplineId) {
         this.parentDisciplineId = parentDisciplineId;
     }
 
-    public Integer getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(Integer level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
-    public Long getCreatorId() {
+    public long getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(Long creatorId) {
+    public void setCreatorId(long creatorId) {
         this.creatorId = creatorId;
     }
 
@@ -77,11 +77,11 @@ public class Disciplines {
         this.creationTime = creationTime;
     }
 
-    public Long getUpdateOperatorId() {
+    public long getUpdateOperatorId() {
         return updateOperatorId;
     }
 
-    public void setUpdateOperatorId(Long updateOperatorId) {
+    public void setUpdateOperatorId(long updateOperatorId) {
         this.updateOperatorId = updateOperatorId;
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.MajorsMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Majors">
+<mapper namespace="com.creativecampus.mappers.MajorMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Major">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
@@ -11,13 +11,13 @@
     delete from majors
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Majors">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Major">
     insert into majors (id, name, discipline_id, 
       description)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{disciplineId,jdbcType=BIGINT}, 
       #{description,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Majors">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Major">
     update majors
     set name = #{name,jdbcType=VARCHAR},
       discipline_id = #{disciplineId,jdbcType=BIGINT},
@@ -33,7 +33,7 @@
     select id, name, discipline_id, description
     from majors
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Majors">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.Major">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="discipline_id" jdbcType="BIGINT" property="disciplineId" />
@@ -43,13 +43,13 @@
     delete from majors
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.Majors">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.Major">
     insert into majors (id, name, discipline_id, 
       description)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{disciplineId,jdbcType=BIGINT}, 
       #{description,jdbcType=VARCHAR})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Majors">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.Major">
     update majors
     set name = #{name,jdbcType=VARCHAR},
       discipline_id = #{disciplineId,jdbcType=BIGINT},

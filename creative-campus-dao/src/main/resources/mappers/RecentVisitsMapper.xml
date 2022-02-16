@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.creativecampus.mappers.RecentVisitsMapper">
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.RecentVisits">
+<mapper namespace="com.creativecampus.mappers.RecentVisitMapper">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.RecentVisit">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
     <result column="visit_type_id" jdbcType="BIGINT" property="visitTypeId" />
@@ -12,13 +12,13 @@
     delete from recent_visits
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.RecentVisits">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.RecentVisit">
     insert into recent_visits (id, teacher_id, visit_type_id, 
       visited_object_id, time)
     values (#{id,jdbcType=BIGINT}, #{teacherId,jdbcType=BIGINT}, #{visitTypeId,jdbcType=BIGINT}, 
       #{visitedObjectId,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.RecentVisits">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.RecentVisit">
     update recent_visits
     set teacher_id = #{teacherId,jdbcType=BIGINT},
       visit_type_id = #{visitTypeId,jdbcType=BIGINT},
@@ -35,7 +35,7 @@
     select id, teacher_id, visit_type_id, visited_object_id, time
     from recent_visits
   </select>
-  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.RecentVisits">
+  <resultMap id="BaseResultMap" type="com.creativecampus.commons.domain.RecentVisit">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
     <result column="visit_type_id" jdbcType="BIGINT" property="visitTypeId" />
@@ -46,13 +46,13 @@
     delete from recent_visits
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.creativecampus.commons.domain.RecentVisits">
+  <insert id="insert" parameterType="com.creativecampus.commons.domain.RecentVisit">
     insert into recent_visits (id, teacher_id, visit_type_id, 
       visited_object_id, time)
     values (#{id,jdbcType=BIGINT}, #{teacherId,jdbcType=BIGINT}, #{visitTypeId,jdbcType=BIGINT}, 
       #{visitedObjectId,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP})
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.RecentVisits">
+  <update id="updateByPrimaryKey" parameterType="com.creativecampus.commons.domain.RecentVisit">
     update recent_visits
     set teacher_id = #{teacherId,jdbcType=BIGINT},
       visit_type_id = #{visitTypeId,jdbcType=BIGINT},

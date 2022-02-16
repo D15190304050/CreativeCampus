@@ -1,33 +1,33 @@
 package com.creativecampus.commons.domain;
 
 public class QuestionKnowledgePointRelation {
-    private Long id;
+    private long id;
 
-    private Long questionId;
+    private long questionId;
 
-    private Long knowledgePointId;
+    private long knowledgePointId;
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Long getQuestionId() {
+    public long getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(Long questionId) {
+    public void setQuestionId(long questionId) {
         this.questionId = questionId;
     }
 
-    public Long getKnowledgePointId() {
+    public long getKnowledgePointId() {
         return knowledgePointId;
     }
 
-    public void setKnowledgePointId(Long knowledgePointId) {
+    public void setKnowledgePointId(long knowledgePointId) {
         this.knowledgePointId = knowledgePointId;
     }
 }
