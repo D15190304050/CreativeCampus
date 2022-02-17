@@ -5,21 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.creativecampus</groupId>
         <artifactId>CreativeCampus</artifactId>
+        <groupId>com.creativecampus</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>perspective-of-students</artifactId>
+    <artifactId>quick-cache</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>perspective-of-students</name>
+    <name>quick-cache</name>
+
+    <properties>
+    </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.creativecampus</groupId>
-            <artifactId>creative-campus-commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>

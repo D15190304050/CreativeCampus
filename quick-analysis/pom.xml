@@ -6,20 +6,18 @@
 
     <parent>
         <groupId>com.creativecampus</groupId>
-        <artifactId>CreativeCampus</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <artifactId>CreativeCampus</artifactId>
     </parent>
 
-    <artifactId>perspective-of-students</artifactId>
+    <artifactId>quick-analysis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>perspective-of-students</name>
+    <name>quick-analysis</name>
+
+    <properties>
+    </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.creativecampus</groupId>
-            <artifactId>creative-campus-commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>

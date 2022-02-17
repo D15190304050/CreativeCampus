@@ -13,6 +13,9 @@
         <module>creative-campus-commons</module>
         <module>perspective-of-students</module>
         <module>creative-campus-dao</module>
+        <module>file-ship</module>
+        <module>quick-analysis</module>
+        <module>quick-cache</module>
     </modules>
 
     <name>CreativeCampus</name>
@@ -44,9 +47,16 @@
 
         <mybatis-boot.version>[2.1.4,)</mybatis-boot.version>
         <druid.version>[1.2.4,)</druid.version>
+        <boot-shiro.version>1.8.0</boot-shiro.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring-boot-starter</artifactId>
+            <version>${boot-shiro.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
