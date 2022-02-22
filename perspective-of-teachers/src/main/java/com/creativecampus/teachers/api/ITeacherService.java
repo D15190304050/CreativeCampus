@@ -7,5 +7,5 @@ public interface ITeacherService
 {
     ServiceResponse<Boolean> registerTeacher(Teacher teacher);
 
-    ServiceResponse<Teacher> login(Teacher teacher)
+    ServiceResponse<Teacher> login(Teacher teacher);
 }
