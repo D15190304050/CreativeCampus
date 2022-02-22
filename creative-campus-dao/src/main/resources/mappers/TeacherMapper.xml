@@ -12,6 +12,8 @@
         <result column="password_encryption_algorithm_id" jdbcType="INTEGER" property="passwordEncryptionAlgorithmId" />
         <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="hashed_password" property="hashed_password" />
+        <result column="salt" property="salt" />
     </resultMap>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from teachers
@@ -108,5 +110,12 @@
 
     <select id="getCountByAccountAndEncryptedPassword" resultType="int">
         SELECT COUNT(*) FROM teachers WHERE account = #{account} AND encrypted_password = #{encryptedPassword};
+    </select>
+
+    <select id="getTeacherByAccount" resultMap="BaseResultMap">
+        select id, account, nickname, avatar_url, phone_number, email, encrypted_password,
+               password_encryption_algorithm_id, creation_time, update_time, hashed_password, salt
+        from teachers
+        WHERE `account` = #{account}
     </select>
 </mapper>

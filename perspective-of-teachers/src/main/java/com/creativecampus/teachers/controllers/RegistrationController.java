@@ -1,6 +1,6 @@
-package com.creativecampus.controllers;
+package com.creativecampus.teachers.controllers;
 
-import com.creativecampus.api.ITeacherService;
+import com.creativecampus.teachers.api.ITeacherService;
 import com.creativecampus.commons.ServiceResponse;
 import com.creativecampus.commons.domain.Student;
 import com.creativecampus.commons.domain.Teacher;

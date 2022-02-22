@@ -7,5 +7,4 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 public @interface LogicOnly
 {
-    boolean manual() default false;
 }

@@ -35,7 +35,7 @@ public class LogicOnlyAspect
     }
 
     @Around("loginOnlyJoinPoint()")
-    public Object handleArgumentsAndAfter(ProceedingJoinPoint proceedingJoinPoint) throws Throwable
+    public Object handleArgumentsAndAfter(ProceedingJoinPoint proceedingJoinPoint)
     {
         logArguments(proceedingJoinPoint);
 

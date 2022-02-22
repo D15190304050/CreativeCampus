@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="front-line-gateway" />
         <module name="quick-analysis" />
         <module name="creative-campus-dao" />
         <module name="file-ship" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="front-line-gateway" target="11" />
       <module name="teacher's-perspective" target="1.7" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +28,7 @@
       <module name="creative-campus-commons" options="-parameters" />
       <module name="creative-campus-dao" options="-parameters" />
       <module name="file-ship" options="-parameters" />
+      <module name="front-line-gateway" options="-parameters" />
       <module name="perspective-of-students" options="-parameters" />
       <module name="perspective-of-teachers" options="-parameters" />
       <module name="quick-analysis" options="-parameters" />

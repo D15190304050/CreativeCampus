@@ -1,14 +1,13 @@
-package com.creativecampus;
+package com.creativecampus.teachers;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
-public class PerspectiveOfTeacher
+public class Program
 {
     public static void main(String[] args)
     {
-        SpringApplication.run(PerspectiveOfTeacher.class);
+        SpringApplication.run(Program.class);
     }
 }

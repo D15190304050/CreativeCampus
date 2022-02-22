@@ -41,6 +41,10 @@ public class Teacher
     @NotNull
     private Date updateTime;
 
+    private String hashedPassword;
+
+    private String salt;
+
     public long getId()
     {
         return id;
@@ -139,5 +143,25 @@ public class Teacher
     public void setUpdateTime(Date updateTime)
     {
         this.updateTime = updateTime;
+    }
+
+    public String getHashedPassword()
+    {
+        return hashedPassword;
+    }
+
+    public void setHashedPassword(String hashedPassword)
+    {
+        this.hashedPassword = hashedPassword;
+    }
+
+    public String getSalt()
+    {
+        return salt;
+    }
+
+    public void setSalt(String salt)
+    {
+        this.salt = salt;
     }
 }

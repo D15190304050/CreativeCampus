@@ -1,4 +1,4 @@
-package com.creativecampus;
+package com.creativecampus.cache;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

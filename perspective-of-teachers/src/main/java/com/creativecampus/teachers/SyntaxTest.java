@@ -1,4 +1,4 @@
-package com.creativecampus;
+package com.creativecampus.teachers;
 
 public class SyntaxTest
 {

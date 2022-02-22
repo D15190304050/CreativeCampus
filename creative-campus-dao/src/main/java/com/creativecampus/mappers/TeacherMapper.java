@@ -20,4 +20,6 @@ public interface TeacherMapper
     int getCountByAccount(String account);
 
     int getCountByAccountAndEncryptedPassword(@Param("account") String account, @Param("encryptedPassword") String encryptedPassword);
+
+    Teacher getTeacherByAccount(@Param("account") String account);
 }

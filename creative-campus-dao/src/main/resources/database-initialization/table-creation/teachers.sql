@@ -10,6 +10,8 @@ CREATE TABLE `teachers`
     `password_encryption_algorithm_id` INT                                            NOT NULL DEFAULT 0 COMMENT 'ID of the encryption algorithm for password.',
     `creation_time`                    DATETIME                                       NOT NULL DEFAULT NOW() COMMENT 'Creation time of the discipline.',
     `update_time`                      DATETIME                                       NOT NULL DEFAULT NOW() ON UPDATE NOW() COMMENT 'Time of last update.',
+    `hashed_password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'Name of the account.',
+    `salt` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT 'Name of the account.',
     PRIMARY KEY (`id`),
     KEY `idx_account` (`account`)
 )

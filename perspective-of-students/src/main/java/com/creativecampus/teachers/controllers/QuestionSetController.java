@@ -1,4 +1,4 @@
-package com.creativecampus.controllers;
+package com.creativecampus.teachers.controllers;
 
 import com.creativecampus.commons.ServiceResponse;
 import org.springframework.stereotype.Controller;
