@@ -1,4 +1,4 @@
-package com.creativecampus.commons.runtime.validation.inteceptors;
+package com.creativecampus.commons.runtime.interceptors;
 
 import org.springframework.web.servlet.DispatcherServlet;
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping("/teachers")
 @Slf4j
 public class RegistrationController
 {
@@ -24,12 +24,5 @@ public class RegistrationController
     public ServiceResponse<Boolean> registerTeacher(@RequestBody Teacher teacher)
     {
         return teacherService.registerTeacher(teacher);
-    }
-
-    @RequestMapping("/registerStudent")
-    @ResponseBody
-    public ServiceResponse<Boolean> registerStudent(@RequestBody Student student)
-    {
-        return null;
     }
 }
