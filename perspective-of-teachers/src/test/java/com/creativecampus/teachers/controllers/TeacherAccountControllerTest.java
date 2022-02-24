@@ -12,10 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Slf4j
-public class RegistrationControllerTest
+public class TeacherAccountControllerTest
 {
     @Autowired
-    private RegistrationController registrationController;
+    private TeacherAccountController teacherAccountController;
 
     @Test
     public void registerTeacher()
@@ -26,7 +26,7 @@ public class RegistrationControllerTest
         log.info("Start test...");
         try
         {
-            ServiceResponse<Boolean> response = registrationController.registerTeacher(null);
+            ServiceResponse<Boolean> response = teacherAccountController.register(null);
             log.info("response = " + JsonSerializer.serialize(response));
         }
         catch (Throwable ignored)

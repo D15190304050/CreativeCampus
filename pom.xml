@@ -16,7 +16,7 @@
         <module>file-ship</module>
         <module>quick-analysis</module>
         <module>quick-cache</module>
-        <module>front-line-gateway</module>
+        <module>ducc</module>
     </modules>
 
     <name>CreativeCampus</name>

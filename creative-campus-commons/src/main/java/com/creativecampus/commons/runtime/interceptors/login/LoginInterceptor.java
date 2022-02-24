@@ -3,7 +3,7 @@ package com.creativecampus.commons.runtime.interceptors.login;
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.runtime.interceptors.InterceptorBase;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.constants.RedisPrefixes;
+import com.creativecampus.commons.constants.RedisKeys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ValueOperations;
@@ -26,7 +26,7 @@ public class LoginInterceptor implements HandlerInterceptor
     {
         HttpSession session = request.getSession();
         String sessionId = session.getId();
-        String sessionIdKey = RedisPrefixes.SESSION_ID + sessionId;
+        String sessionIdKey = RedisKeys.getSessionIdKey(sessionId);
 
         Object sessionUserId = valueOperations.get(sessionIdKey);
         if (sessionUserId != null)

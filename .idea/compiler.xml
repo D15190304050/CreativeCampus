@@ -14,6 +14,7 @@
         <module name="creative-campus-commons" />
         <module name="quick-cache" />
         <module name="perspective-of-students" />
+        <module name="ducc" />
         <module name="perspective-of-teachers" />
       </profile>
     </annotationProcessing>
@@ -27,6 +28,7 @@
       <module name="CreativeCampus" options="-parameters" />
       <module name="creative-campus-commons" options="-parameters" />
       <module name="creative-campus-dao" options="-parameters" />
+      <module name="ducc" options="-parameters" />
       <module name="file-ship" options="-parameters" />
       <module name="front-line-gateway" options="-parameters" />
       <module name="perspective-of-students" options="-parameters" />

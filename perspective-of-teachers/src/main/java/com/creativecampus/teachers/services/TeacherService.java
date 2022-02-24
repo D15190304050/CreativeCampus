@@ -3,6 +3,7 @@ package com.creativecampus.teachers.services;
 import com.creativecampus.commons.CommonErrorResponses;
 import com.creativecampus.commons.LogicOnly;
 import com.creativecampus.commons.ServiceResponse;
+import com.creativecampus.commons.constants.RedisKeys;
 import com.creativecampus.commons.domain.Teacher;
 import com.creativecampus.mappers.TeacherMapper;
 import com.creativecampus.teachers.api.ITeacherService;
@@ -12,8 +13,12 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.servlet.http.HttpSession;
+import java.time.Duration;
 
 @Service
 @Slf4j
@@ -25,6 +30,9 @@ public class TeacherService implements ITeacherService
 
     @Autowired
     private Subject subject;
+
+    @Autowired
+    private ValueOperations<String, Object> valueOperations;
 
     private boolean exists(String account)
     {
@@ -46,7 +54,7 @@ public class TeacherService implements ITeacherService
 
     @Override
     @Transactional
-    public ServiceResponse<Teacher> login(Teacher teacher)
+    public ServiceResponse<Teacher> login(Teacher teacher, HttpSession session)
     {
         try
         {
@@ -62,7 +70,19 @@ public class TeacherService implements ITeacherService
         }
 
         Teacher result = teacherMapper.getTeacherByAccount(teacher.getAccount());
+
+        // If the program reaches here, then login success.
+        // Save login state.
+        // Keep-alive duration = 30 min.
+        valueOperations.set(RedisKeys.getSessionIdKey(session.getId()), teacher.getId(), Duration.ofMinutes(30));
+
         return ServiceResponse.buildSuccessResponse(result);
     }
 
+    public ServiceResponse<Boolean> logout(HttpSession session)
+    {
+        String sessionIdKey = RedisKeys.getSessionIdKey(session.getId());
+        Boolean deleteResult = valueOperations.getOperations().delete(sessionIdKey);
+        return ServiceResponse.buildSuccessResponse(deleteResult);
+    }
 }

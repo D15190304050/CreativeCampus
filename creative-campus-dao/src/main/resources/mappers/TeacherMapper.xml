@@ -8,7 +8,6 @@
         <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
         <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
         <result column="email" jdbcType="VARCHAR" property="email" />
-        <result column="encrypted_password" jdbcType="VARCHAR" property="encryptedPassword" />
         <result column="password_encryption_algorithm_id" jdbcType="INTEGER" property="passwordEncryptionAlgorithmId" />
         <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -113,8 +112,8 @@
     </select>
 
     <select id="getTeacherByAccount" resultMap="BaseResultMap">
-        select id, account, nickname, avatar_url, phone_number, email, encrypted_password,
-               password_encryption_algorithm_id, creation_time, update_time, hashed_password, salt
+        select id, account, nickname, avatar_url, phone_number, email,
+               password_encryption_algorithm_id, creation_time, update_time
         from teachers
         WHERE `account` = #{account}
     </select>

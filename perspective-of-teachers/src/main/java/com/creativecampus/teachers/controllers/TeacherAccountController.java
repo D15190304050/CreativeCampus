@@ -11,18 +11,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/teachers")
 @Slf4j
-public class RegistrationController
+public class TeacherAccountController
 {
     @Autowired
     private ITeacherService teacherService;
 
-    @RequestMapping("/registerTeacher")
+    @RequestMapping("/register")
     @ResponseBody
-    public ServiceResponse<Boolean> registerTeacher(@RequestBody Teacher teacher)
+    public ServiceResponse<Boolean> register(@RequestBody Teacher teacher)
     {
         return teacherService.registerTeacher(teacher);
+    }
+
+    @RequestMapping("/login")
+    @ResponseBody
+    public ServiceResponse<Teacher> login(@RequestBody Teacher teacher, HttpSession session)
+    {
+        return teacherService.login(teacher, session);
+    }
+
+    @RequestMapping("/logout")
+    @ResponseBody
+    public ServiceResponse<Boolean> logout(HttpSession session)
+    {
+        return teacherService.logout(session);
     }
 }
