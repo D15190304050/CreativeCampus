@@ -1,14 +1,14 @@
 package com.creativecampus.commons.constants;
 
-public enum QuestionSource
+public enum MarkingType
 {
-    ORIGINAL(0),
-    REPRINT(1),
+    AUTO(0),
+    MANUAL(1),
     ;
 
     private final int code;
 
-    QuestionSource(int code)
+    MarkingType(int code)
     {
         this.code = code;
     }

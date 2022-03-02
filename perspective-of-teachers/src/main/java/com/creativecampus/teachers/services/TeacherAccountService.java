@@ -6,7 +6,7 @@ import com.creativecampus.commons.ServiceResponse;
 import com.creativecampus.commons.constants.RedisKeys;
 import com.creativecampus.commons.domain.Teacher;
 import com.creativecampus.mappers.TeacherMapper;
-import com.creativecampus.teachers.api.ITeacherService;
+import com.creativecampus.teachers.api.ITeacherAccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -22,8 +22,7 @@ import java.time.Duration;
 
 @Service
 @Slf4j
-@LogicOnly
-public class TeacherService implements ITeacherService
+public class TeacherAccountService implements ITeacherAccountService
 {
     @Autowired
     private TeacherMapper teacherMapper;
@@ -54,6 +53,7 @@ public class TeacherService implements ITeacherService
 
     @Override
     @Transactional
+    @LogicOnly
     public ServiceResponse<Teacher> login(Teacher teacher, HttpSession session)
     {
         try

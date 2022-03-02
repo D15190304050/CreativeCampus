@@ -1,7 +1,9 @@
 package com.creativecampus.teachers.controllers;
 
 import com.creativecampus.commons.ServiceResponse;
+import com.creativecampus.commons.models.AnswersOfQuestionSet;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,11 +14,14 @@ public class QuestionSetController
      *
      * @return
      */
-    @RequestMapping("/submitQuestionSet")
+    @RequestMapping("/submitAnswer")
     @ResponseBody
-    public ServiceResponse<Boolean> submitQuestionSet()
+    public ServiceResponse<Boolean> submitAnswersOfQuestionSet(@RequestBody AnswersOfQuestionSet answersOfQuestionSet)
     {
-        // Get student id (not from request argument).
+        long studentId = answersOfQuestionSet.getStudentId();
+        long questionSetId = answersOfQuestionSet.getQuestionSetId();
+
+
 
         return null;
     }

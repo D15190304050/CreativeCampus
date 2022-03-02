@@ -5,7 +5,7 @@ import com.creativecampus.commons.domain.Teacher;
 
 import javax.servlet.http.HttpSession;
 
-public interface ITeacherService
+public interface ITeacherAccountService
 {
     ServiceResponse<Boolean> registerTeacher(Teacher teacher);
 

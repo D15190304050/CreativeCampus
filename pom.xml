@@ -49,6 +49,7 @@
         <mybatis-boot.version>[2.1.4,)</mybatis-boot.version>
         <druid.version>[1.2.4,)</druid.version>
         <boot-shiro.version>1.8.0</boot-shiro.version>
+        <easyexcel.version>3.0.5</easyexcel.version>
     </properties>
 
     <dependencies>
@@ -120,6 +121,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>${easyexcel.version}</version>
         </dependency>
 
         <dependency>

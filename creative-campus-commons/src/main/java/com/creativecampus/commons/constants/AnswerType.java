@@ -1,14 +1,14 @@
 package com.creativecampus.commons.constants;
 
-public enum QuestionSource
+public enum AnswerType
 {
-    ORIGINAL(0),
-    REPRINT(1),
+    SIMPLE_TEXT(0),
+    RICH_TEXT(1),
     ;
 
     private final int code;
 
-    QuestionSource(int code)
+    AnswerType(int code)
     {
         this.code = code;
     }

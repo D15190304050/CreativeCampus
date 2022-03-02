@@ -1,8 +1,7 @@
 package com.creativecampus.teachers.controllers;
 
-import com.creativecampus.teachers.api.ITeacherService;
+import com.creativecampus.teachers.api.ITeacherAccountService;
 import com.creativecampus.commons.ServiceResponse;
-import com.creativecampus.commons.domain.Student;
 import com.creativecampus.commons.domain.Teacher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,26 +18,26 @@ import javax.servlet.http.HttpSession;
 public class TeacherAccountController
 {
     @Autowired
-    private ITeacherService teacherService;
+    private ITeacherAccountService teacherAccountService;
 
     @RequestMapping("/register")
     @ResponseBody
     public ServiceResponse<Boolean> register(@RequestBody Teacher teacher)
     {
-        return teacherService.registerTeacher(teacher);
+        return teacherAccountService.registerTeacher(teacher);
     }
 
     @RequestMapping("/login")
     @ResponseBody
     public ServiceResponse<Teacher> login(@RequestBody Teacher teacher, HttpSession session)
     {
-        return teacherService.login(teacher, session);
+        return teacherAccountService.login(teacher, session);
     }
 
     @RequestMapping("/logout")
     @ResponseBody
     public ServiceResponse<Boolean> logout(HttpSession session)
     {
-        return teacherService.logout(session);
+        return teacherAccountService.logout(session);
     }
 }
