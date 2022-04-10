@@ -29,19 +29,7 @@
         <!-- lookup parent from repository -->
     </parent>
 
-    <profiles>
-        <profile>
-            <id>primary</id>
-            <properties>
-                <dataworks.path>D:/DinoStark/Projects/MavenLocalRepository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>
-<!--                <dataworks.path>${settings.localRepository}/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>-->
-
-            </properties>
-        </profile>
-    </profiles>
-
     <properties>
-        <x>${settings.localRepository}</x>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -50,6 +38,8 @@
         <druid.version>[1.2.4,)</druid.version>
         <boot-shiro.version>1.8.0</boot-shiro.version>
         <easyexcel.version>3.0.5</easyexcel.version>
+
+        <dataworks.path>D:/DinoStark/Projects/Maven/Repository/org/dataworks/dataworks/0.0.1-SNAPSHOT/dataworks-0.0.1-SNAPSHOT.jar</dataworks.path>
     </properties>
 
     <dependencies>
